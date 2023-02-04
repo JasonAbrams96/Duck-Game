@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Duck_sprite_sheet.png" type="Texture" id=1]
+[ext_resource path="res://Events/Transition_Screen.gd" type="Script" id=2]
+
+[node name="Transition Screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 600.0
+margin_bottom = 448.0
+color = Color( 0.117647, 0.117647, 0.117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 224, 288 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="Label" type="Label" parent="Sprite"]
+margin_left = 32.0
+margin_right = 77.0
+margin_bottom = 14.0
+text = "x LIVES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextLevelLabel" type="Label" parent="."]
+margin_left = 120.0
+margin_top = 400.0
+margin_right = 512.0
+margin_bottom = 414.0
+text = "Next Level: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NextLevelLabel"]
+margin_left = 80.0
+margin_top = -312.0
+margin_right = 272.0
+margin_bottom = -298.0
+text = "WORLD     x     -     x"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

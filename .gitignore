@@ -1,0 +1,12 @@
+
+.import/
+
+.mono/assemblies/Debug/
+
+*.import
+
+*.wav
+
+*.mp3
+
+.mono/metadata/

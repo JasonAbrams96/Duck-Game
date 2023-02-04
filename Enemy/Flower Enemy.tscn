@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/y_flower_enemy_sheet.png" type="Texture" id=1]
+[ext_resource path="res://Enemy/Flower Enemy.gd" type="Script" id=2]
+[ext_resource path="res://Assets/flower_enemy_dead.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.81409, 3.52164 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 8.61523, 5.96494 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 3.4088, 7.43645 )
+
+[node name="Flower Enemy" type="KinematicBody2D" groups=[
+"enemy",
+]]
+pause_mode = 1
+collision_layer = 8
+collision_mask = 3
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.842796, 12.6466 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 6 )
+playing = true
+
+[node name="HeadArea" type="Area2D" parent="."]
+position = Vector2( -0.842796, 8.52164 )
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeadArea"]
+position = Vector2( 1.17635, -13.8726 )
+shape = SubResource( 7 )
+one_way_collision = true
+one_way_collision_margin = 128.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 3.22414, 0 )
+enabled = true
+cast_to = Vector2( 0, 18 )
+collision_mask = 2
+
+[node name="HurtArea" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtArea"]
+position = Vector2( -8.5, 7.14484 )
+shape = SubResource( 8 )
+
+[node name="HurtArea2" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtArea2"]
+position = Vector2( 7.34499, 7.08234 )
+shape = SubResource( 8 )
+
+[node name="Death_Timer" type="Timer" parent="."]
+wait_time = 1.5
+[connection signal="body_entered" from="HeadArea" to="." method="_on_HeadArea_body_entered"]
+[connection signal="body_entered" from="HurtArea" to="." method="_on_HurtArea_body_entered"]
+[connection signal="body_entered" from="HurtArea2" to="." method="_on_HurtArea_body_entered"]
+[connection signal="timeout" from="Death_Timer" to="." method="_on_Death_Timer_timeout"]

@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+// UV mapping is just x = v ( 0.0 - 1.0) and y = v(0.0 - 1.0)
+
+uniform vec4 flash_color: hint_color = vec4(1.0);
+uniform float flash_modifier: hint_range(0.0, 1.0) = 1;
+
+void fragment() {
+	//RUns for every pixel in sprite
+	vec4 color = texture(TEXTURE, UV);
+	color.rgb = mix(color.rgb, flash_color.rgb, flash_modifier);
+	COLOR = color;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/flash_color = Color( 0.890196, 0.694118, 0.968627, 1 )
+shader_param/flash_modifier = 1.0

@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/cave_background_sheet.png" type="Texture" id=1]
+
+[node name="CaveBackground" type="ParallaxBackground"]
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 1000, 1000 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 368, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 1000, 4000 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 1000, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer2"]
+position = Vector2( 368, -88 )
+scale = Vector2( 1, 0.996 )
+texture = ExtResource( 1 )
+vframes = 4
+frame = 1
+region_enabled = true
+region_rect = Rect2( 0, 0, 1000, 4000 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1000, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer3"]
+position = Vector2( 376, 64 )
+scale = Vector2( 1, 0.868 )
+texture = ExtResource( 1 )
+vframes = 4
+frame = 2
+region_enabled = true
+region_rect = Rect2( 0, 0, 1000, 4000 )

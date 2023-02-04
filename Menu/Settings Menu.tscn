@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://settings_theme.theme" type="Theme" id=1]
+[ext_resource path="res://Menu/Settings Menu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Menus/back_button_not_pressed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Menus/back_button_pressed.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Menus/back_button_hover.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/Menus/Acme____.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = SubResource( 1 )
+
+[node name="Settings Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.415686 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.471924
+margin_right = 0.471924
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -110.5
+margin_top = 22.0
+margin_right = 110.5
+margin_bottom = 67.0
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Label"]
+margin_left = 96.7907
+margin_top = 191.605
+margin_right = 243.791
+margin_bottom = 223.605
+custom_fonts/font = SubResource( 2 )
+text = "SFX Volume"
+
+[node name="Label2" type="Label" parent="Label"]
+margin_left = 96.528
+margin_top = 148.288
+margin_right = 173.528
+margin_bottom = 180.288
+custom_fonts/font = SubResource( 2 )
+text = "Music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Label"]
+margin_left = 96.7907
+margin_top = 101.566
+margin_right = 173.791
+margin_bottom = 133.566
+custom_fonts/font = SubResource( 2 )
+text = "Master"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="master_volume" type="HSlider" parent="."]
+margin_left = 78.6071
+margin_top = 133.848
+margin_right = 268.607
+margin_bottom = 149.848
+min_value = -60.0
+max_value = 6.0
+step = 0.1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="music_volume" type="HSlider" parent="."]
+margin_left = 78.6071
+margin_top = 179.154
+margin_right = 268.607
+margin_bottom = 195.154
+min_value = -60.0
+max_value = 6.0
+step = 0.1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sfx_volume" type="HSlider" parent="."]
+margin_left = 79.079
+margin_top = 221.605
+margin_right = 269.079
+margin_bottom = 237.605
+min_value = -60.0
+max_value = 6.0
+step = 0.1
+value = -60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBtn" type="TextureButton" parent="."]
+margin_left = 11.4703
+margin_top = 374.714
+margin_right = 97.4703
+margin_bottom = 466.714
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="master_volume" to="." method="_on_slider_bar_mouse_entered"]
+[connection signal="value_changed" from="master_volume" to="." method="_on_master_volume_value_changed"]
+[connection signal="mouse_entered" from="music_volume" to="." method="_on_slider_bar_mouse_entered"]
+[connection signal="value_changed" from="music_volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="mouse_entered" from="sfx_volume" to="." method="_on_slider_bar_mouse_entered"]
+[connection signal="value_changed" from="sfx_volume" to="." method="_on_sfx_volume_value_changed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]

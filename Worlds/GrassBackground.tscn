@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/grass_background_sheet.png" type="Texture" id=1]
+[ext_resource path="res://Worlds/GrassBackground.gd" type="Script" id=2]
+
+[node name="GrassBackground" type="ParallaxBackground"]
+script = ExtResource( 2 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 648, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 0, -69.4117 )
+scale = Vector2( 0.648, 0.648 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 1000, 4000 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 648, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer4"]
+position = Vector2( 0, -69.4117 )
+scale = Vector2( 0.648, 0.648 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 4
+frame = 3
+region_enabled = true
+region_rect = Rect2( 0, 0, 1000, 4000 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 648, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer2"]
+position = Vector2( 0, -69.4117 )
+scale = Vector2( 0.648, 0.648 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 4
+frame = 1
+region_enabled = true
+region_rect = Rect2( 0, 0, 1000, 4000 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 648, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer3"]
+position = Vector2( 0, -69.4117 )
+scale = Vector2( 0.648, 0.648 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 4
+frame = 2
+region_enabled = true
+region_rect = Rect2( 0, 0, 1000, 4000 )

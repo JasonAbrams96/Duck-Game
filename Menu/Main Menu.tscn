@@ -1,0 +1,614 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Assets/Menus/Title.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Menus/play_button_not_pressed.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Menus/play_button_pressed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Menus/Quit_Button_Pressed.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Menus/play_button_hover.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Menus/Quit_Button_Not_Pressed.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Menus/Quit_Button_hover.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Menus/Acme____.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/Menus/spacebar_key.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Menus/a_key.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Menus/d_key.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Menus/s_key.png" type="Texture" id=12]
+[ext_resource path="res://Menu/Main Menu.gd" type="Script" id=13]
+[ext_resource path="res://Assets/flower_enemy.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Goal_area.png" type="Texture" id=15]
+[ext_resource path="res://Assets/fish_enemy.png" type="Texture" id=16]
+[ext_resource path="res://Assets/bread_collectible.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Menus/settings_cog_not_pressed.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Menus/settings_cog_hover.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Menus/settings_cog_pressed.png" type="Texture" id=20]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+use_filter = true
+extra_spacing_top = 1
+extra_spacing_space = 1
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Assets/Menus/Acme____.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 36
+use_mipmaps = true
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 17
+use_mipmaps = true
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Assets/Menus/Acme____.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 17
+font_data = SubResource( 5 )
+
+[node name="Main Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.815686, 0.815686, 0.815686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleRect" type="TextureRect" parent="ColorRect"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 584.0
+margin_bottom = 144.0
+rect_pivot_offset = Vector2( 292, 72 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 256.0
+margin_top = 416.0
+margin_right = 590.0
+margin_bottom = 444.0
+custom_fonts/font = SubResource( 1 )
+text = "A Game made by Jason Abrams"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slide_show" type="Control" parent="ColorRect"]
+margin_right = 32.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls_Panel" type="ColorRect" parent="ColorRect/Slide_show"]
+margin_left = 240.0
+margin_top = 192.0
+margin_right = 576.0
+margin_bottom = 408.0
+color = Color( 0.431373, 0.494118, 0.517647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/Slide_show/Controls_Panel"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -73.0
+margin_right = 73.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 3 )
+text = "Controls"
+
+[node name="Label2" type="Label" parent="ColorRect/Slide_show/Controls_Panel"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -64.0
+margin_top = 56.0
+margin_right = 140.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 4 )
+text = "------- Left/Right"
+align = 2
+
+[node name="Label3" type="Label" parent="ColorRect/Slide_show/Controls_Panel"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -64.0
+margin_top = 112.0
+margin_right = 140.0
+margin_bottom = 143.0
+custom_fonts/font = SubResource( 4 )
+text = "--------------- Duck"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="ColorRect/Slide_show/Controls_Panel"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -8.0
+margin_top = 168.0
+margin_right = 140.0
+margin_bottom = 199.0
+custom_fonts/font = SubResource( 4 )
+text = "---------- Jump"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Slide_show/Controls_Panel"]
+margin_left = 8.0
+margin_top = 64.0
+margin_right = 152.0
+margin_bottom = 144.0
+custom_constants/separation = 32
+alignment = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/Slide_show/Controls_Panel/VBoxContainer"]
+margin_right = 144.0
+margin_bottom = 24.0
+alignment = 1
+
+[node name="a_key" type="TextureRect" parent="ColorRect/Slide_show/Controls_Panel/VBoxContainer/HBoxContainer"]
+margin_left = 46.0
+margin_right = 70.0
+margin_bottom = 24.0
+texture = ExtResource( 10 )
+
+[node name="d_key" type="TextureRect" parent="ColorRect/Slide_show/Controls_Panel/VBoxContainer/HBoxContainer"]
+margin_left = 74.0
+margin_right = 98.0
+margin_bottom = 24.0
+texture = ExtResource( 11 )
+
+[node name="s_key" type="TextureRect" parent="ColorRect/Slide_show/Controls_Panel/VBoxContainer"]
+margin_top = 56.0
+margin_right = 144.0
+margin_bottom = 80.0
+texture = ExtResource( 12 )
+stretch_mode = 4
+
+[node name="s_key2" type="TextureRect" parent="ColorRect/Slide_show/Controls_Panel/VBoxContainer"]
+margin_top = 112.0
+margin_right = 144.0
+margin_bottom = 136.0
+texture = ExtResource( 9 )
+stretch_mode = 4
+
+[node name="Controls_Panel2" type="ColorRect" parent="ColorRect/Slide_show"]
+margin_left = 1920.0
+margin_top = 192.0
+margin_right = 2256.0
+margin_bottom = 408.0
+color = Color( 0.431373, 0.494118, 0.517647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/Slide_show/Controls_Panel2"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -73.0
+margin_right = 73.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 3 )
+text = "Controls"
+
+[node name="Label2" type="Label" parent="ColorRect/Slide_show/Controls_Panel2"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -64.0
+margin_top = 56.0
+margin_right = 140.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 4 )
+text = "------- Left/Right"
+align = 2
+
+[node name="Label3" type="Label" parent="ColorRect/Slide_show/Controls_Panel2"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -64.0
+margin_top = 112.0
+margin_right = 140.0
+margin_bottom = 143.0
+custom_fonts/font = SubResource( 4 )
+text = "--------------- Duck"
+align = 2
+
+[node name="Label4" type="Label" parent="ColorRect/Slide_show/Controls_Panel2"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -8.0
+margin_top = 168.0
+margin_right = 140.0
+margin_bottom = 199.0
+custom_fonts/font = SubResource( 4 )
+text = "---------- Jump"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Slide_show/Controls_Panel2"]
+margin_left = 8.0
+margin_top = 64.0
+margin_right = 152.0
+margin_bottom = 144.0
+custom_constants/separation = 32
+alignment = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/Slide_show/Controls_Panel2/VBoxContainer"]
+margin_right = 144.0
+margin_bottom = 24.0
+alignment = 1
+
+[node name="a_key" type="TextureRect" parent="ColorRect/Slide_show/Controls_Panel2/VBoxContainer/HBoxContainer"]
+margin_left = 46.0
+margin_right = 70.0
+margin_bottom = 24.0
+texture = ExtResource( 10 )
+
+[node name="d_key" type="TextureRect" parent="ColorRect/Slide_show/Controls_Panel2/VBoxContainer/HBoxContainer"]
+margin_left = 74.0
+margin_right = 98.0
+margin_bottom = 24.0
+texture = ExtResource( 11 )
+
+[node name="s_key" type="TextureRect" parent="ColorRect/Slide_show/Controls_Panel2/VBoxContainer"]
+margin_top = 56.0
+margin_right = 144.0
+margin_bottom = 80.0
+texture = ExtResource( 12 )
+stretch_mode = 4
+
+[node name="s_key2" type="TextureRect" parent="ColorRect/Slide_show/Controls_Panel2/VBoxContainer"]
+margin_top = 112.0
+margin_right = 144.0
+margin_bottom = 136.0
+texture = ExtResource( 9 )
+stretch_mode = 4
+
+[node name="Collectible_Panel" type="ColorRect" parent="ColorRect/Slide_show"]
+margin_left = 1248.0
+margin_top = 192.0
+margin_right = 1584.0
+margin_bottom = 408.0
+color = Color( 0.556863, 0.65098, 0.686275, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/Slide_show/Collectible_Panel"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -94.0
+margin_right = 94.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 3 )
+text = "Collectible"
+
+[node name="Label2" type="Label" parent="ColorRect/Slide_show/Collectible_Panel"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 16.0
+margin_top = 96.0
+margin_right = 112.0
+margin_bottom = 143.0
+custom_fonts/font = SubResource( 4 )
+text = "Bread
+Points: 100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="ColorRect/Slide_show/Collectible_Panel"]
+margin_left = 24.0
+margin_top = 64.0
+margin_right = 168.0
+margin_bottom = 192.0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/Slide_show/Collectible_Panel/Panel"]
+margin_top = -8.0
+margin_right = 144.0
+margin_bottom = 128.0
+texture = ExtResource( 17 )
+stretch_mode = 1
+
+[node name="Enemy_Panel_1" type="ColorRect" parent="ColorRect/Slide_show"]
+margin_left = 576.0
+margin_top = 192.0
+margin_right = 912.0
+margin_bottom = 408.0
+color = Color( 0.576471, 0.72549, 0.780392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/Slide_show/Enemy_Panel_1"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -127.0
+margin_right = 127.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 3 )
+text = "Flower Enemy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="ColorRect/Slide_show/Enemy_Panel_1"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 24.0
+margin_top = -44.0
+margin_right = -168.0
+margin_bottom = 84.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/Slide_show/Enemy_Panel_1/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -56.0
+margin_top = -56.0
+margin_right = 56.0
+margin_bottom = 56.0
+texture = ExtResource( 14 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="ColorRect/Slide_show/Enemy_Panel_1"]
+margin_left = 176.0
+margin_top = 64.0
+margin_right = 324.0
+margin_bottom = 163.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.160784, 0.0784314, 0.0784314, 1 )
+text = "Walks back
+and forth
+Can be jumped on"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy_Panel_2" type="ColorRect" parent="ColorRect/Slide_show"]
+margin_left = 912.0
+margin_top = 192.0
+margin_right = 1248.0
+margin_bottom = 408.0
+color = Color( 0.576471, 0.72549, 0.780392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/Slide_show/Enemy_Panel_2"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -107.5
+margin_right = 107.5
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 3 )
+text = "Fish Enemy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="ColorRect/Slide_show/Enemy_Panel_2"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 24.0
+margin_top = -44.0
+margin_right = -168.0
+margin_bottom = 84.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/Slide_show/Enemy_Panel_2/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -56.0
+margin_top = -56.0
+margin_right = 56.0
+margin_bottom = 56.0
+rect_rotation = 90.0
+rect_pivot_offset = Vector2( 56, 56 )
+texture = ExtResource( 16 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="ColorRect/Slide_show/Enemy_Panel_2"]
+margin_left = 176.0
+margin_top = 64.0
+margin_right = 328.0
+margin_bottom = 163.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.160784, 0.0784314, 0.0784314, 1 )
+text = "Jumps Up and
+Down
+Cannot be killed"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy_Panel_3" type="ColorRect" parent="ColorRect/Slide_show"]
+margin_left = 1584.0
+margin_top = 192.0
+margin_right = 1920.0
+margin_bottom = 408.0
+color = Color( 0.427451, 0.698039, 0.796078, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/Slide_show/Enemy_Panel_3"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -127.0
+margin_right = 127.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 3 )
+text = "Get to the Goal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="ColorRect/Slide_show/Enemy_Panel_3"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 24.0
+margin_top = -60.0
+margin_right = -168.0
+margin_bottom = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/Slide_show/Enemy_Panel_3/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.0
+margin_top = -64.0
+margin_right = 16.0
+margin_bottom = 64.0
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="ColorRect/Slide_show/Enemy_Panel_3"]
+margin_left = 176.0
+margin_top = 64.0
+margin_right = 328.0
+margin_bottom = 163.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.160784, 0.0784314, 0.0784314, 1 )
+text = "Get to the goal
+of each level.
+Score as many
+points as possible.
+Points: 500"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SlideShowHIder" type="ColorRect" parent="ColorRect"]
+margin_left = -168.0
+margin_top = 168.0
+margin_right = 240.0
+margin_bottom = 432.0
+color = Color( 0.815686, 0.815686, 0.815686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SlideShowHIder2" type="ColorRect" parent="ColorRect"]
+margin_left = 576.0
+margin_top = 184.0
+margin_right = 600.0
+margin_bottom = 416.0
+color = Color( 0.815686, 0.815686, 0.815686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayBtn" type="TextureButton" parent="ColorRect"]
+margin_left = 72.0
+margin_top = 264.0
+margin_right = 168.0
+margin_bottom = 328.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsBtn" type="TextureButton" parent="ColorRect"]
+margin_left = 16.0
+margin_top = 392.0
+margin_right = 56.0
+margin_bottom = 432.0
+texture_normal = ExtResource( 18 )
+texture_pressed = ExtResource( 20 )
+texture_hover = ExtResource( 19 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitBtn" type="TextureButton" parent="ColorRect"]
+margin_left = 72.0
+margin_top = 336.0
+margin_right = 168.0
+margin_bottom = 400.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Tween2" type="Tween" parent="."]
+[connection signal="pressed" from="ColorRect/PlayBtn" to="." method="_on_PlayBtn_pressed"]
+[connection signal="pressed" from="ColorRect/SettingsBtn" to="." method="_on_SettingsBtn_pressed"]
+[connection signal="pressed" from="ColorRect/QuitBtn" to="." method="_on_QuitBtn_pressed"]

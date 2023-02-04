@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Events/ScoreLayer.gd" type="Script" id=1]
+[ext_resource path="res://Assets/heart_container.png" type="Texture" id=2]
+[ext_resource path="res://Assets/bread_collectible.png" type="Texture" id=3]
+
+[node name="ScoreLayer" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -8.0
+margin_right = 608.0
+margin_bottom = 48.0
+color = Color( 0, 0, 0, 0.698039 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LblScore" type="Label" parent="ColorRect"]
+margin_left = 424.0
+margin_top = 16.0
+margin_right = 595.0
+margin_bottom = 30.0
+text = "score: 0000000000000000"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Breads" type="Control" parent="ColorRect/LblScore"]
+margin_left = -288.0
+margin_top = -16.0
+margin_right = -240.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bread" type="TextureRect" parent="ColorRect/LblScore/Breads"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+stretch_mode = 6
+
+[node name="breadLbl" type="Label" parent="ColorRect/LblScore/Breads"]
+margin_left = 48.0
+margin_top = 16.0
+margin_right = 96.0
+margin_bottom = 32.0
+text = "x00"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hearts" type="Control" parent="ColorRect/LblScore"]
+margin_left = -408.0
+margin_top = -8.0
+margin_right = -368.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="heart1" type="TextureRect" parent="ColorRect/LblScore/Hearts"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="heart2" type="TextureRect" parent="ColorRect/LblScore/Hearts"]
+margin_left = 32.0
+margin_right = 64.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="heart3" type="TextureRect" parent="ColorRect/LblScore/Hearts"]
+margin_left = 64.0
+margin_right = 96.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
