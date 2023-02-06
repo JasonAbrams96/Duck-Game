@@ -124,6 +124,11 @@ func collect(name, amount, score):
 			PlayerGlobal.score += score
 			PlayerGlobal.emit_signal("score_updated", PlayerGlobal.score)
 			enable_special()
+		elif name.to_upper() == "HEART":
+			PlayerGlobal.score += score
+			PlayerGlobal.emit_signal("score_updated", PlayerGlobal.score)
+			player_global.health += amount
+			PlayerGlobal.emit_signal("health_updated", PlayerGlobal.health)
 
 func enable_special():
 	print("enabled_special")

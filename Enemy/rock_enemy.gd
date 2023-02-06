@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+export var is_magama:bool = false
 
 var speed = 50
 var motion = Vector2()
@@ -13,9 +14,14 @@ var points = 100
 var random_idle
 var idle_count = 0.0
 
+var modifier = ""
+
 func _ready():
 	random_idle = PlayerGlobal.get_i_rand_range_num(1000, 10000)
-	$AnimatedSprite.play("walk")
+	if is_magama:
+		modifier = "r_"
+		points += 50
+	$AnimatedSprite.play(modifier + "walk")
 	
 func _physics_process(delta):
 	if can_move:
@@ -25,7 +31,7 @@ func _physics_process(delta):
 			dir *= -1
 			flip()
 		elif !$RayCast2D.is_colliding() and is_on_floor():
-			$AnimatedSprite.play("idle")
+			$AnimatedSprite.play(modifier + "idle")
 			dir *= -1
 			flip()
 			$IdleTimer.start()
@@ -40,7 +46,7 @@ func _physics_process(delta):
 	
 		if idle_count >= random_idle:
 			random_idle = PlayerGlobal.get_i_rand_range_num(1000, 10000)
-			$AnimatedSprite.play("idle")
+			$AnimatedSprite.play(modifier + "idle")
 			$IdleTimer.start()
 			idle_count = 0.0
 			set_physics_process(false)
@@ -48,7 +54,7 @@ func _physics_process(delta):
 			idle_count += 0.5
 
 func _on_JumpArea_body_entered(body):
-	if body.is_in_group("player") and not dead:
+	if body.is_in_group("player") and not dead and !is_magama:
 		body.jump(1)
 		dead = true
 		can_move = false
@@ -61,9 +67,11 @@ func _on_JumpArea_body_entered(body):
 		$HurtArea.monitoring = false
 		$HurtArea2.monitoring = false
 		$JumpArea.monitoring = false
-		$AnimatedSprite.play("dead")
+		$AnimatedSprite.play(modifier + "dead")
 		$MoveTimer.start()
 		
+	elif is_magama and body.is_in_group("player"):
+		body.hurt(1)
 
 func hurt_area(body):
 	if body.is_in_group("player"):
@@ -76,7 +84,7 @@ func flip():
 func _on_MoveTimer_timeout():
 	dead = false
 	$MoveTimer.stop()
-	$AnimatedSprite.play("resume")
+	$AnimatedSprite.play(modifier + "resume")
 	$ResumeTimer.start()
 	set_collision_mask_bit(0, 1)
 	$HurtArea.monitoring = true
