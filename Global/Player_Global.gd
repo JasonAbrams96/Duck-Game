@@ -11,6 +11,7 @@ var health = 3
 var bread = 0
 var player
 var num_of_lives = 3
+var specials_collected = 0
 
 func _ready():
 	rand = RandomNumberGenerator.new()
@@ -30,3 +31,6 @@ func add_score(s):
 func add_health(amount):
 	health += amount
 	emit_signal("health_updated", health)
+	
+func add_special(amount):
+	specials_collected += amount

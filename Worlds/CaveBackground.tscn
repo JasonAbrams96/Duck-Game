@@ -8,6 +8,7 @@ __meta__ = {
 }
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.4, 1 )
 motion_mirroring = Vector2( 1000, 1000 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer"]
@@ -31,7 +32,6 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 1000, 4000 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
-motion_scale = Vector2( 0.4, 1 )
 motion_mirroring = Vector2( 1000, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer3"]
