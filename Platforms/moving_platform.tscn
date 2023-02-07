@@ -19,6 +19,7 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
 shape = SubResource( 1 )
+one_way_collision = true
 
 [node name="Tween" type="Tween" parent="."]
 repeat = true
