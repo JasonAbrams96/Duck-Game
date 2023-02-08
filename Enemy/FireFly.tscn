@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/firefly_sheet.png" type="Texture" id=1]
+[ext_resource path="res://Enemy/FireFly.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -49,11 +50,13 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=10]
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="Firefly" type="KinematicBody2D"]
+script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
 animation = "r_flying"
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

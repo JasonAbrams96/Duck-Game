@@ -54,10 +54,13 @@ func _physics_process(delta):
 			idle_count += 0.5
 
 func _on_JumpArea_body_entered(body):
-	if body.is_in_group("player") and not dead and !is_magama:
+	if body.is_in_group("player") and not dead:
 		body.jump(1)
 		dead = true
 		can_move = false
+		
+		if is_magama:
+			body.hurt(1)
 		
 		if points == 100:
 			PlayerGlobal.add_score(points)
