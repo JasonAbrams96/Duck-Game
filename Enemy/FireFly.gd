@@ -11,7 +11,7 @@ var dir = 0
 
 var moving_down = true
 var moving_towards_player = false
-
+var can_drop = true
 func _ready():
 	player_pos = PlayerGlobal.player.global_position
 	
@@ -20,23 +20,31 @@ func _ready():
 	elif player_pos.x - global_position.x > 0 and dir == 0:
 			dir = 1
 func _process(delta):
-	if global_position.x <= player_pos.x + 64:
+	if global_position.x <= player_pos.x + 64 and global_position.x >= player_pos.x - 64 and can_drop:
 		$AnimatedSprite.play("r_flying")
-	else:
+		if can_drop:
+			var ins = load("res://Enemy/FallingRock.tscn").instance()
+			owner.add_child(ins)
+			ins.global_position = global_position
+			can_drop = false
+	elif can_drop:
 		$AnimatedSprite.play("flying")
-	#TODO make firefly fly down first then turn and go towards player
-	#TODO explode when near end point.
-	#TODO drop firerock near the player
+
+	
 func _physics_process(delta):
 	if moving_down:
-		motion.y = speed
+		motion.y = speed * 1.5
 		if global_position.y > player_pos.y - 48 and !PlayerGlobal.player.in_jump or global_position.y > player_pos.y - 16 and PlayerGlobal.player.in_jump:
 			moving_down = false
 			moving_towards_player = true
 			motion
 	elif moving_towards_player:
-		motion.x = speed * 1.5 * dir
+		motion.x = speed * 1.25 * dir
 		motion.y = 0
 		
 	player_pos = PlayerGlobal.player.global_position
 	move_and_slide(motion)
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()

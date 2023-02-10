@@ -254,7 +254,9 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 11/shapes = [  ]
 11/z_index = -1
 
-[node name="MagmaTileset" type="TileMap"]
+[node name="MagmaTileset" type="TileMap" groups=[
+"platform",
+]]
 tile_set = SubResource( 9 )
 cell_size = Vector2( 32, 32 )
 format = 1

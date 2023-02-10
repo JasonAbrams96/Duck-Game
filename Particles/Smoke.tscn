@@ -4,6 +4,7 @@
 [ext_resource path="res://Particles/Smoke.gd" type="Script" id=2]
 
 [node name="SmokeParticles" type="CPUParticles2D"]
+z_index = -2
 emitting = false
 amount = 7
 lifetime = 4.0

@@ -20,6 +20,9 @@ func _ready():
 func get_i_rand_range_num(low, high):
 	return rand.randi_range(low, high)
 	
+func get_f_rand_range_num(low, high):
+	return rand.randf_range(low, high)
+	
 func add_bread(amount):
 	bread += amount
 	emit_signal("bread_updated", bread)
