@@ -11,6 +11,7 @@ var is_invincible = false
 var in_goal = false
 var is_visible = true
 var in_jumper = false
+var on_moving_platform = false
 
 var has_hat = false
 var hat_mod = ""
@@ -51,10 +52,11 @@ func _physics_process(delta):
 		
 		#motion = motion.normalized()
 		
-		if !in_jumper:
+		if on_moving_platform:
 			var snap = Vector2.DOWN * 32 if !in_jump else Vector2.ZERO
 			motion = move_and_slide_with_snap(motion, snap, Vector2.UP)
-		elif in_jumper:
+		else:
+		#elif in_jumper then same as else statement:
 			motion = move_and_slide(motion, Vector2.UP)
 
 func get_input():

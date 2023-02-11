@@ -25,7 +25,7 @@ func _on_Area2D_body_entered(body):
 			if rand_e <= 99:
 				var enemy = load("res://Enemy/Rock Enemy.tscn").instance()
 				enemy.is_magama = true
-				owner.add_child(enemy)
+				get_parent().add_child(enemy)
 				enemy.global_position = global_position
 		
 		queue_free()
