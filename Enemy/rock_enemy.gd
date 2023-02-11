@@ -97,7 +97,7 @@ func _on_MoveTimer_timeout():
 
 func _on_IdleTimer_timeout():
 	self.set_physics_process(true)
-	$AnimatedSprite.play("walk")
+	$AnimatedSprite.play(modifier + "walk")
 	$IdleTimer.stop()
 
 
@@ -107,6 +107,6 @@ func _on_AnimatedSprite_animation_finished():
 
 func _on_ResumeTimer_timeout():
 	$ResumeTimer.stop()
-	$AnimatedSprite.play("walk")
+	$AnimatedSprite.play(modifier + "walk")
 	can_move = true
 	

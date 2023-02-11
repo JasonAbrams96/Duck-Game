@@ -23,8 +23,8 @@ func _process(delta):
 	if global_position.x <= player_pos.x + 64 and global_position.x >= player_pos.x - 64 and can_drop:
 		$AnimatedSprite.play("r_flying")
 		if can_drop:
-			var ins = load("res://Enemy/FallingRock.tscn").instance()
-			owner.add_child(ins)
+			var ins = Global.falling_rock.instance()
+			get_parent().add_child(ins)
 			ins.global_position = global_position
 			can_drop = false
 	elif can_drop:

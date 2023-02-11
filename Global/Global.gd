@@ -9,6 +9,8 @@ var empty_heart = preload("res://Assets/heart_container_empty.png")
 var full_heart = preload("res://Assets/heart_container.png")
 var special = preload("res://Collectibles/Special.tscn")
 
+var fire_fly = preload("res://Enemy/FireFly.tscn")
+var falling_rock = preload("res://Enemy/FallingRock.tscn")
 #Globally Used by multiple things
 var GRAVITY = 20
 
