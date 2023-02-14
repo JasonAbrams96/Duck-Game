@@ -23,9 +23,10 @@ func _ready():
 			dir = -1
 	elif player_pos.x - global_position.x > 0 and dir == 0:
 			dir = 1
+			$AnimatedSprite.flip_h = true
 
 func _process(delta):
-	if global_position.x <= player_pos.x + 64 and global_position.x >= player_pos.x - 64 and can_drop:
+	if global_position.x <= player_pos.x + 64 and global_position.x >= player_pos.x - 64 and can_drop and !PlayerGlobal.player.in_goal:
 		$AnimatedSprite.play("r_flying")
 		if can_drop:
 			var ins = Global.falling_rock.instance()

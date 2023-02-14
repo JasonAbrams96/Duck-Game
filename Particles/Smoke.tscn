@@ -16,7 +16,7 @@ initial_velocity = 8.13
 script = ExtResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 0.943877, 0 )
-scale = Vector2( 3.12372, 1 )
+position = Vector2( 0.943869, 0 )
+scale = Vector2( 7.08798, 1 )
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
