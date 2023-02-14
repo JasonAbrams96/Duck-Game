@@ -20,6 +20,14 @@ var world = 1
 var level = 1
 var current_level = "world" + String(world) + "-" + String(level)
 
+var special_lock_1 = false
+var special_lock_2 = false
+var special_lock_3 = false
+
+var special_1 = false
+var special_2 = false
+var special_3 = false
+
 
 #Pages
 var menus = []
@@ -69,3 +77,46 @@ func create_sfx_audio(audio, node_to_add_to: Node):
 	else:
 		node_to_add_to.add_child(sound_player)
 	sound_player.play_sound(audio)
+
+func unlock_lock(num: int):
+	if num == 1 and special_1:
+		special_lock_1 = true
+		return true
+	elif num == 2 and special_2:
+		special_lock_2 = true
+		return true
+	elif num == 3 and special_3:
+		special_lock_3 = true
+		return true
+	return false
+		
+		
+func lock_special(num: int):
+	if num == 1:
+		special_1 = true
+	elif num == 2:
+		special_2 = true
+	elif num == 3:
+		special_3 = true	
+		
+		
+func game_over():
+	#resets the items for GLOBAL
+	to_next_level = false
+	world = 1
+	level = 1
+	current_level = "world" + String(world) + "-" + String(level)
+
+	special_lock_1 = false
+	special_lock_2 = false
+	special_lock_3 = false
+
+	special_1 = false
+	special_2 = false
+	special_3 = false
+	
+	#Calls other Singletons to game_over them
+	GlobalTransition.game_over()
+	PlayerGlobal.game_over()
+	
+	var transition = GlobalTransition.transition.instance()

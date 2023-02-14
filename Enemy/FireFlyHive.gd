@@ -17,5 +17,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 func _on_Timer_timeout():
 	if can_spawn:
 		var firefly = Global.fire_fly.instance()
+		firefly.start_pos = $Position2D.global_position
 		get_parent().add_child(firefly)
-		firefly.global_position = $Position2D.global_position
+		

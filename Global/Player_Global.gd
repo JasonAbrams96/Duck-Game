@@ -3,6 +3,8 @@ extends Node
 signal score_updated(new_score)
 signal health_updated(new_health)
 signal bread_updated(new_amount)
+signal lives_updated(new_lives)
+signal dead
 
 var score = 0
 var num_of_jumps = 0
@@ -37,3 +39,21 @@ func add_health(amount):
 	
 func add_special(amount):
 	specials_collected += amount
+	
+func respawn():
+	num_of_lives -= 1
+	emit_signal("lives_updated", num_of_lives)
+	health = 3
+	emit_signal("health_update", health)
+	
+	
+func game_over():
+	score = 0
+	num_of_jumps = 0
+	health = 3
+	bread = 0
+	player = null
+	num_of_lives = 3
+	specials_collected = 0
+		
+	

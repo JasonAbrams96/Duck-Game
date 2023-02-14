@@ -4,10 +4,11 @@ var score = 300
 var velocity = Vector2()
 var direction = -1
 var in_jump = false
+var num = 0
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
-		body.collect("special",0, score)
+		body.collect("special",num, score)
 		queue_free()
 
 func _physics_process(delta):

@@ -35,6 +35,7 @@ PlayerGlobal="*res://Global/Player_Global.gd"
 Global="*res://Global/Global.gd"
 GlobalTransition="*res://Global/Global_Transition.gd"
 ToxicWaterSingleton="*res://Global/ToxicWaterSingleton.gd"
+LavaSingleton="*res://Global/LavaSingleton.gd"
 
 [display]
 

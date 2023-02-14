@@ -125,15 +125,18 @@ func collect(name, amount, score):
 		elif name.to_upper() == "SPECIAL":
 			PlayerGlobal.score += score
 			PlayerGlobal.emit_signal("score_updated", PlayerGlobal.score)
-			enable_special()
+			enable_special(amount) #not an amount but a the id for the special
 		elif name.to_upper() == "HEART":
 			PlayerGlobal.score += score
 			PlayerGlobal.emit_signal("score_updated", PlayerGlobal.score)
 			player_global.health += amount
 			PlayerGlobal.emit_signal("health_updated", PlayerGlobal.health)
 
-func enable_special():
-	print("enabled_special")
+func enable_special(num):
+	if num == 1 or num == 2 or num == 3:
+		Global.lock_special(num)
+		player_global.add_special(1)
+		
 	
 func hurt(damage):
 	if !is_invincible:
@@ -141,6 +144,9 @@ func hurt(damage):
 			hat_mod = ""
 		else:
 			player_global.health -= 1
+			if player_global.health <= 0:
+				player_global.emit_signal("dead")
+				queue_free()
 		$HurtTimer.start()
 		is_invincible = true
 		PlayerGlobal.emit_signal("health_updated", player_global.health)

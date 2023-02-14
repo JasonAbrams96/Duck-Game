@@ -12,13 +12,18 @@ var dir = 0
 var moving_down = true
 var moving_towards_player = false
 var can_drop = true
+
 func _ready():
+	if start_pos != null:
+		global_position = start_pos
+	
 	player_pos = PlayerGlobal.player.global_position
 	
 	if player_pos.x - global_position.x < 0 and dir == 0:
 			dir = -1
 	elif player_pos.x - global_position.x > 0 and dir == 0:
 			dir = 1
+
 func _process(delta):
 	if global_position.x <= player_pos.x + 64 and global_position.x >= player_pos.x - 64 and can_drop:
 		$AnimatedSprite.play("r_flying")
