@@ -46,6 +46,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BackPanel" type="Panel" parent="Control"]
+self_modulate = Color( 1, 1, 1, 0.478431 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -204.0
+margin_top = -97.0
+margin_right = 204.0
+margin_bottom = 95.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="SettingsPanel" type="Panel" parent="Control"]
 visible = false
 margin_left = -140.0
@@ -189,20 +201,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BackPanel" type="Panel" parent="Control"]
-self_modulate = Color( 1, 1, 1, 0.478431 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -204.0
-margin_top = -97.0
-margin_right = 204.0
-margin_bottom = 95.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="PausePanel" type="Panel" parent="Control"]
-visible = false
 margin_right = 192.0
 margin_bottom = 256.0
 __meta__ = {

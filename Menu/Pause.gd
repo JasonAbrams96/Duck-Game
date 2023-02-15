@@ -5,11 +5,11 @@ func _ready():
 	$Control/SettingsPanel/MasterSlider.value = AudioServer.get_bus_volume_db(0)
 	
 func _on_ResumeBtn_pressed():
-	$Control.visible = false
-	pause_mode = false
+	get_tree().paused = false
+	queue_free()
 
 func _on_QuitBtn_pressed():
-	pause_mode = false
+	get_tree().paused = false
 	get_tree().change_scene("res://Menu/Main Menu.tscn")
 
 func _on_SettingsBtn_pressed():

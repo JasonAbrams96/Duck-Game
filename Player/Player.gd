@@ -12,6 +12,7 @@ var in_goal = false
 var is_visible = true
 var in_jumper = false
 var on_moving_platform = false
+var is_paused = false
 
 var has_hat = false
 var hat_mod = ""
@@ -49,8 +50,6 @@ func _physics_process(delta):
 			motion.y = 0
 			
 		get_input()
-		
-		#motion = motion.normalized()
 		
 		if on_moving_platform:
 			var snap = Vector2.DOWN * 32 if !in_jump else Vector2.ZERO
@@ -140,6 +139,12 @@ func enable_special(num):
 	
 func hurt(damage):
 	if !is_invincible:
+		if damage == 5:
+			#OHKO
+			player_global.health -= 3
+			player_global.emit_signal("dead")
+			queue_free()
+		
 		if hat_mod != "":
 			hat_mod = ""
 		else:
@@ -183,6 +188,6 @@ func _on_HurtTimer_timeout():
 
 func _on_VisibilityNotifier2D_viewport_exited(viewport):
 	
-	if !in_goal and is_visible:
+	if !in_goal and is_visible and !is_paused:
 		GlobalTransition.is_death_transition = true
 		get_tree().change_scene_to(GlobalTransition.transition)

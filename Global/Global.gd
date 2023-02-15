@@ -11,6 +11,8 @@ var special = preload("res://Collectibles/Special.tscn")
 
 var fire_fly = preload("res://Enemy/FireFly.tscn")
 var falling_rock = preload("res://Enemy/FallingRock.tscn")
+
+var pause_menu = preload("res://Menu/Pause.tscn")
 #Globally Used by multiple things
 var GRAVITY = 20
 

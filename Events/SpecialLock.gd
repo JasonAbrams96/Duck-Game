@@ -2,7 +2,6 @@ extends StaticBody2D
 
 var player_detected = false
 export var num = 0
-#TODO Process for if player quacks
 
 func _ready():
 	pass

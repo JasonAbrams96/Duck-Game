@@ -51,6 +51,7 @@ func _physics_process(delta):
 	
 func _on_HitArea_body_entered(body):
 	if body.is_in_group("player"):
+		print("Bee hurt")
 		body.hurt(1)
 		
 func _on_DetectionArea_body_entered(body):

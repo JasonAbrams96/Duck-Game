@@ -28,28 +28,28 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 10, 48.25 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 3 )
-region = Rect2( 32, 0, 32, 32 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 3 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -59,6 +59,7 @@ animations = [ {
 extents = Vector2( 10.8413, 10.3299 )
 
 [node name="FireStream" type="Node2D"]
+z_index = -1
 script = ExtResource( 2 )
 
 [node name="Neck" type="Node2D" parent="."]
@@ -66,17 +67,18 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Neck"]
 position = Vector2( 0, 48 )
 frames = SubResource( 5 )
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="Neck/AnimatedSprite"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Neck/AnimatedSprite/Area2D"]
-shape = SubResource( 11 )
+shape = SubResource( 6 )
 
 [node name="Head" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -16 )
-frames = SubResource( 10 )
-frame = 1
+frames = SubResource( 11 )
+frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="Head"]

@@ -128,7 +128,7 @@ margin_top = 56.0
 margin_right = 140.0
 margin_bottom = 96.0
 custom_fonts/font = SubResource( 4 )
-text = "------- Left/Right"
+text = "--------- Left/Right"
 align = 2
 
 [node name="Label3" type="Label" parent="ColorRect/Slide_show/Controls_Panel"]
@@ -136,15 +136,27 @@ self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -64.0
-margin_top = 112.0
+margin_top = 96.0
 margin_right = 140.0
-margin_bottom = 143.0
+margin_bottom = 127.0
 custom_fonts/font = SubResource( 4 )
-text = "--------------- Duck"
+text = "---------------- Duck"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label5" type="Label" parent="ColorRect/Slide_show/Controls_Panel"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -64.0
+margin_top = 128.0
+margin_right = 140.0
+margin_bottom = 159.0
+custom_fonts/font = SubResource( 4 )
+text = "--------------- Quack"
+align = 2
 
 [node name="Label4" type="Label" parent="ColorRect/Slide_show/Controls_Panel"]
 self_modulate = Color( 0, 0, 0, 1 )
@@ -155,7 +167,7 @@ margin_top = 168.0
 margin_right = 140.0
 margin_bottom = 199.0
 custom_fonts/font = SubResource( 4 )
-text = "---------- Jump"
+text = "---------------- Jump"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -163,10 +175,10 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Slide_show/Controls_Panel"]
 margin_left = 8.0
-margin_top = 64.0
+margin_top = 32.0
 margin_right = 152.0
-margin_bottom = 144.0
-custom_constants/separation = 32
+margin_bottom = 224.0
+custom_constants/separation = 16
 alignment = 1
 __meta__ = {
 "_edit_group_": true,
@@ -174,8 +186,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/Slide_show/Controls_Panel/VBoxContainer"]
+margin_top = 24.0
 margin_right = 144.0
-margin_bottom = 24.0
+margin_bottom = 48.0
 alignment = 1
 
 [node name="a_key" type="TextureRect" parent="ColorRect/Slide_show/Controls_Panel/VBoxContainer/HBoxContainer"]
@@ -191,16 +204,23 @@ margin_bottom = 24.0
 texture = ExtResource( 11 )
 
 [node name="s_key" type="TextureRect" parent="ColorRect/Slide_show/Controls_Panel/VBoxContainer"]
-margin_top = 56.0
+margin_top = 64.0
 margin_right = 144.0
-margin_bottom = 80.0
+margin_bottom = 88.0
 texture = ExtResource( 12 )
 stretch_mode = 4
 
 [node name="s_key2" type="TextureRect" parent="ColorRect/Slide_show/Controls_Panel/VBoxContainer"]
-margin_top = 112.0
+margin_top = 104.0
 margin_right = 144.0
-margin_bottom = 136.0
+margin_bottom = 128.0
+texture = ExtResource( 21 )
+stretch_mode = 4
+
+[node name="space_key" type="TextureRect" parent="ColorRect/Slide_show/Controls_Panel/VBoxContainer"]
+margin_top = 144.0
+margin_right = 144.0
+margin_bottom = 168.0
 texture = ExtResource( 9 )
 stretch_mode = 4
 

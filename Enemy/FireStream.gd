@@ -2,7 +2,6 @@ extends Node2D
 
 export var segments = 1
 
-var necks = []
 var height = 96
 var diff = 90
 var start_pos

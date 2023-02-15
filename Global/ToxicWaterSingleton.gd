@@ -21,4 +21,5 @@ func timer_timeout():
 		get_tree().get_root().get_child(get_tree().get_root().get_child_count() - 1).remove_child(timer)
 		timer_added = false
 	else:
+		print("toxic water hurt")
 		PlayerGlobal.player.hurt(1)

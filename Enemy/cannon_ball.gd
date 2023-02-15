@@ -19,5 +19,6 @@ func _on_VisibilityNotifier2D_viewport_exited(viewport):
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
+		print("cannon ball hurt")
 		body.hurt(1)
 		queue_free()

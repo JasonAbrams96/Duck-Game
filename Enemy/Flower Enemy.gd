@@ -47,6 +47,7 @@ func _on_HeadArea_body_entered(body):
 
 func _on_HurtArea_body_entered(body):
 	if body.is_in_group("player"):
+		"yellow flower hurt"
 		body.hurt(1)
 		
 func _on_Death_Timer_timeout():

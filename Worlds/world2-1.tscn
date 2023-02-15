@@ -20,6 +20,7 @@
 [ext_resource path="res://Worlds/CaveBackground.tscn" type="PackedScene" id=18]
 
 [node name="world2-1" type="Node"]
+pause_mode = 1
 script = ExtResource( 16 )
 
 [node name="Goal" parent="." instance=ExtResource( 9 )]

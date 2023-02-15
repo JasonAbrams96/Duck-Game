@@ -20,7 +20,10 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
-		pause_mode = true
+		var puase = Global.pause_menu.instance()
+		add_child(puase)
+		player.is_paused = true
+		get_tree().paused = true
 
 func _on_Timer_timeout():
 	get_tree().change_scene_to(GlobalTransition.transition)

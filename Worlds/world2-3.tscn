@@ -22,6 +22,7 @@
 [ext_resource path="res://Events/ScoreLayer.tscn" type="PackedScene" id=20]
 
 [node name="world2-3" type="Node"]
+pause_mode = 1
 script = ExtResource( 18 )
 
 [node name="Goal" parent="." instance=ExtResource( 2 )]
