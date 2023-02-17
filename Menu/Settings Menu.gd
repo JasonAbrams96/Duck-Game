@@ -32,8 +32,13 @@ func set_0_audio(bus):
 
 #Function to go back from where player entered settings
 func _on_BackBtn_pressed():
+	Global.create_sfx_audio("res://Assets/Audio/sfx_menu_select5.wav", get_tree().current_scene)
 	get_tree().change_scene(Global.menus.pop_back())
 
 
 func _on_slider_bar_mouse_entered():
 	Global.create_sfx_audio("res://Assets/Audio/sfx_menu_select5.wav", self)
+
+
+func _on_BackBtn_mouse_entered():
+	Global.create_sfx_audio("res://Assets/Audio/sfx_menu_move4.wav", get_tree().current_scene)

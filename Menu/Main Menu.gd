@@ -7,6 +7,8 @@ var grow_tween_on = true
 var can_animate_slide_show = true
 var slide_show_timer = [3.0, 2.5]
 
+func _ready():
+	Global.change_bg_music(5)
 func _process(delta):
 	
 	if grow_tween_on:
@@ -73,3 +75,7 @@ func _on_QuitBtn_pressed():
 func _on_SettingsBtn_pressed():
 	Global.menus.append("res://Menu/Main Menu.tscn")
 	get_tree().change_scene("res://Menu/Settings Menu.tscn")
+
+
+func _on_mouse_entered():
+	Global.create_sfx_audio("res://Assets/Audio/sfx_menu_move4.wav", get_tree().current_scene)

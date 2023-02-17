@@ -4,11 +4,11 @@ onready var lives_label = $Sprite/Label
 onready var next_level_lbl = $NextLevelLabel
 onready var current_world_lbl = $NextLevelLabel/Label
 
-func _ready():
+func _ready():	
 	
-	lives_label.text = "x  " + String(PlayerGlobal.num_of_lives)
 	if GlobalTransition.is_death_transition:
 		current_world_lbl.text = "CURRENT WORLD:  " + Global.get_current_level_string()
+		PlayerGlobal.respawn()
 	elif GlobalTransition.is_game_over:
 		current_world_lbl.text = "G A M E   O V E R"
 		lives_label.text = "x 0"
@@ -16,7 +16,10 @@ func _ready():
 		$Sprite.flip_v = true
 	else:
 		current_world_lbl.text = "CURRENT WORLD:  " + Global.get_next_level_string()
+		Global.change_bg_music(4)
+		$Timer.wait_time = 4.1
 	
+	lives_label.text = "x  " + String(PlayerGlobal.num_of_lives)
 	next_level_lbl.text = ""
 
 	$Timer.start()

@@ -19,6 +19,9 @@ margin_left = -72.6122
 margin_top = -52.4132
 margin_right = 683.388
 margin_bottom = 560.587
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Credits" type="Control" parent="."]
 margin_right = 40.0
@@ -35,7 +38,8 @@ margin_bottom = 175.597
 custom_fonts/font = SubResource( 2 )
 text = "Background Music:
 --8 Bit Surf and 8 Bit Adventure by David Renda on fesliyanstudios.com
---A Bit of Hope by David Fesliyan on fesliyanstudios.com"
+--A Bit of Hope by David Fesliyan on fesliyanstudios.com
+--Music Pack 1 by Swiss Arcade Game Entertainment"
 valign = 1
 autowrap = true
 __meta__ = {

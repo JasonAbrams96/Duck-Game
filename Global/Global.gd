@@ -2,7 +2,6 @@ extends Node
 
 #loads
 var audio_player = preload("res://Audio/SEAudioPlayer.tscn")
-var music_player = null
 var explosion_particles = preload("res://Particles/Explosion.tscn")
 var cannon_ball = preload("res://Enemy/cannon_ball.tscn")
 var brick_hit = preload("res://Assets/brick_opened.png")
@@ -19,7 +18,9 @@ var GRAVITY = 20
 var bg_music = {
 	1: "res://Assets/Audio/8 Bit Surf.ogg",
 	2: "res://Assets/Audio/8 Bit Adventure.ogg",
-	3: "res://Assets/Audio/A Bit of Hope.ogg"
+	3: "res://Assets/Audio/A Bit of Hope.ogg",
+	4: "res://Assets/Audio/Transition_Screen.ogg",
+	5: "res://Assets/Audio/MainMenu.ogg"
 }
 
 #Transition Screen
@@ -32,6 +33,8 @@ var current_level = "world" + String(world) + "-" + String(level)
 var special_lock_1 = false
 var special_lock_2 = false
 var special_lock_3 = false
+
+var locks = [ 1, 2, 3]
 
 var special_1 = false
 var special_2 = false
@@ -66,14 +69,9 @@ func get_current_level():
 	
 func get_current_level_string():
 	return "World " + String(world) + " - " + String(level)
-
-func create_bg_audio():
-	if music_player == null:
-		music_player = load("res://Audio/BackgroundAudio.tscn").instance()
-		get_tree().current_scene.add_child(music_player)
 		
 func change_bg_music(num):
-	music_player.play_sound(bg_music.get(num))
+	BackgroundAudio.play_sound(bg_music.get(num))
 
 func create_audio(audio, node_to_add_to: Node):
 	var sound_player = audio_player.instance()

@@ -129,4 +129,5 @@ __meta__ = {
 [connection signal="value_changed" from="music_volume" to="." method="_on_music_volume_value_changed"]
 [connection signal="mouse_entered" from="sfx_volume" to="." method="_on_slider_bar_mouse_entered"]
 [connection signal="value_changed" from="sfx_volume" to="." method="_on_sfx_volume_value_changed"]
+[connection signal="mouse_entered" from="BackBtn" to="." method="_on_BackBtn_mouse_entered"]
 [connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]

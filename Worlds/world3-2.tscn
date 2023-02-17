@@ -29,7 +29,7 @@
 position = Vector2( 5072, 96 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 32, 296 )
+position = Vector2( 24, 304 )
 
 [node name="Bricks" type="Node2D" parent="."]
 

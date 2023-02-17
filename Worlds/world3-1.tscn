@@ -27,32 +27,78 @@ script = ExtResource( 17 )
 position = Vector2( 5376, 256 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 48, 296 )
+position = Vector2( 24, 304 )
 
-[node name="FireStreams" type="Node2D" parent="."]
+[node name="Breads" type="Node2D" parent="."]
 
-[node name="FireStream" parent="FireStreams" instance=ExtResource( 9 )]
-position = Vector2( 1872, 424 )
-segments = 3
+[node name="Bread" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 464, 272 )
 
-[node name="FireStream2" parent="FireStreams" instance=ExtResource( 9 )]
-position = Vector2( 2352, 408 )
-segments = 2
+[node name="Bread2" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 496, 272 )
 
-[node name="FireStream3" parent="FireStreams" instance=ExtResource( 9 )]
-position = Vector2( 2480, 408 )
-segments = 2
+[node name="Bread3" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 528, 272 )
 
-[node name="Jumpers" type="Node2D" parent="."]
+[node name="Bread4" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 848, 176 )
 
-[node name="Jumper" parent="Jumpers" instance=ExtResource( 5 )]
-position = Vector2( 688, 304 )
+[node name="Bread5" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 784, 176 )
 
-[node name="Jumper2" parent="Jumpers" instance=ExtResource( 5 )]
-position = Vector2( 944, 304 )
+[node name="Bread6" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 816, 176 )
 
-[node name="Jumper3" parent="Jumpers" instance=ExtResource( 5 )]
-position = Vector2( 4048, 304 )
+[node name="Bread7" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 1168, 240 )
+
+[node name="Bread8" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 1200, 240 )
+
+[node name="Bread9" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 1232, 240 )
+
+[node name="Bread10" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 1712, 272 )
+
+[node name="Bread11" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 1808, 208 )
+
+[node name="Bread12" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 2048, 304 )
+
+[node name="Bread13" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 2128, 176 )
+
+[node name="Bread15" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 2416, 336 )
+
+[node name="Bread16" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 2448, 336 )
+
+[node name="Bread17" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 2384, 336 )
+
+[node name="Bread18" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 2736, 240 )
+
+[node name="Bread19" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 2800, 240 )
+
+[node name="Bread20" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 2864, 240 )
+
+[node name="Bread21" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 2800, 144 )
+
+[node name="Bread22" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 4248, 304 )
+
+[node name="Bread23" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 4376, 304 )
+
+[node name="Bread14" parent="Breads" instance=ExtResource( 13 )]
+position = Vector2( 2160, 176 )
 
 [node name="Bricks" type="Node2D" parent="."]
 
@@ -208,76 +254,30 @@ collectible = ExtResource( 16 )
 position = Vector2( 304, 144 )
 collectible = ExtResource( 14 )
 
-[node name="Breads" type="Node2D" parent="."]
+[node name="FireStreams" type="Node2D" parent="."]
 
-[node name="Bread" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 464, 272 )
+[node name="FireStream" parent="FireStreams" instance=ExtResource( 9 )]
+position = Vector2( 1872, 424 )
+segments = 3
 
-[node name="Bread2" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 496, 272 )
+[node name="FireStream2" parent="FireStreams" instance=ExtResource( 9 )]
+position = Vector2( 2352, 408 )
+segments = 2
 
-[node name="Bread3" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 528, 272 )
+[node name="FireStream3" parent="FireStreams" instance=ExtResource( 9 )]
+position = Vector2( 2480, 408 )
+segments = 2
 
-[node name="Bread4" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 848, 176 )
+[node name="Jumpers" type="Node2D" parent="."]
 
-[node name="Bread5" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 784, 176 )
+[node name="Jumper" parent="Jumpers" instance=ExtResource( 5 )]
+position = Vector2( 688, 304 )
 
-[node name="Bread6" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 816, 176 )
+[node name="Jumper2" parent="Jumpers" instance=ExtResource( 5 )]
+position = Vector2( 944, 304 )
 
-[node name="Bread7" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 1168, 240 )
-
-[node name="Bread8" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 1200, 240 )
-
-[node name="Bread9" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 1232, 240 )
-
-[node name="Bread10" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 1712, 272 )
-
-[node name="Bread11" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 1808, 208 )
-
-[node name="Bread12" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 2048, 304 )
-
-[node name="Bread13" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 2128, 176 )
-
-[node name="Bread15" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 2416, 336 )
-
-[node name="Bread16" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 2448, 336 )
-
-[node name="Bread17" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 2384, 336 )
-
-[node name="Bread18" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 2736, 240 )
-
-[node name="Bread19" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 2800, 240 )
-
-[node name="Bread20" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 2864, 240 )
-
-[node name="Bread21" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 2800, 144 )
-
-[node name="Bread22" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 4248, 304 )
-
-[node name="Bread23" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 4376, 304 )
-
-[node name="Bread14" parent="Breads" instance=ExtResource( 13 )]
-position = Vector2( 2160, 176 )
+[node name="Jumper3" parent="Jumpers" instance=ExtResource( 5 )]
+position = Vector2( 4048, 304 )
 
 [node name="Enemies" type="Node2D" parent="."]
 

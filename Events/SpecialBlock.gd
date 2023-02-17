@@ -11,13 +11,14 @@ func _ready():
 	elif num == 3 and Global.special_3 == true: open()
 	
 func _on_Area2D_body_entered(body):
-	if body.is_in_group("p_head") and !opened:
+	if body.is_in_group("p_head") and !opened and PlayerGlobal.player.motion.y < 0:
 		opened = true
 		$Sprite.texture = load("res://Assets/mystery_box_opened.png")
 		item = item.instance()
 		item.num = num
 		item.global_position = $Position2D.global_position
 		owner.add_child(item)
+		Global.create_sfx_audio("res://Assets/Audio/Last_Lock_unlocked.wav", get_tree().current_scene)
 
 func open():
 	opened = true

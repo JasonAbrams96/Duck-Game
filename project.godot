@@ -36,6 +36,7 @@ Global="*res://Global/Global.gd"
 GlobalTransition="*res://Global/Global_Transition.gd"
 ToxicWaterSingleton="*res://Global/ToxicWaterSingleton.gd"
 LavaSingleton="*res://Global/LavaSingleton.gd"
+BackgroundAudio="*res://Audio/BackgroundAudio.gd"
 
 [display]
 

@@ -2,7 +2,7 @@ extends StaticBody2D
 
 class_name Cannon
 export var cannon_ball_speed: int = 200
-export var timeout: float = 1.5
+export var timeout: float = 2.5
 onready var timer = $Timer
 
 var can_fire_cannon = false

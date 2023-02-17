@@ -20,12 +20,12 @@ func _ready():
 	countdown_timer.connect("timeout", self, "countdown_timer_timeout")
 	
 	#add the music player:
-	Global.create_bg_audio()
-	Global.change_bg_music(Global.world + 2)
+	Global.change_bg_music(Global.world)
 
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		var puase = Global.pause_menu.instance()
+		Global.create_sfx_audio("res://Assets/Audio/sfx_sounds_pause3_in.wav", get_tree().current_scene)
 		add_child(puase)
 		player.is_paused = true
 		get_tree().paused = true

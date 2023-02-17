@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Worlds/CaveBackground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Events/Goal.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Worlds/World.gd" type="Script" id=18]
 [ext_resource path="res://Enemy/Bat_Enemy.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Events/ScoreLayer.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Enemy/FireFlyHive.tscn" type="PackedScene" id=21]
 
 [node name="world2-3" type="Node"]
 pause_mode = 1
@@ -29,109 +30,7 @@ script = ExtResource( 18 )
 position = Vector2( 5128, 256 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 24, 264 )
-
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="StaticBody2D" parent="Enemies" instance=ExtResource( 14 )]
-position = Vector2( 4680, -32 )
-cannon_ball_speed = 150
-timeout = 2.0
-
-[node name="StaticBody2D2" parent="Enemies" instance=ExtResource( 14 )]
-position = Vector2( 4680, -56 )
-cannon_ball_speed = 150
-timeout = 2.0
-
-[node name="StaticBody2D3" parent="Enemies" instance=ExtResource( 14 )]
-position = Vector2( 4680, -80 )
-cannon_ball_speed = 150
-timeout = 2.0
-
-[node name="Fish_Enemy" parent="Enemies" instance=ExtResource( 15 )]
-position = Vector2( 368, 336 )
-is_green = true
-
-[node name="Fish_Enemy2" parent="Enemies" instance=ExtResource( 15 )]
-position = Vector2( 432, 336 )
-is_green = true
-
-[node name="Fish_Enemy3" parent="Enemies" instance=ExtResource( 15 )]
-position = Vector2( 656, 336 )
-is_green = true
-
-[node name="Fish_Enemy4" parent="Enemies" instance=ExtResource( 15 )]
-position = Vector2( 720, 336 )
-is_green = true
-
-[node name="Rock_Enemy" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 224, 272 )
-
-[node name="Rock_Enemy2" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 272, 272 )
-
-[node name="Rock_Enemy3" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 1216, -40 )
-
-[node name="Rock_Enemy4" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 1456, -240 )
-
-[node name="Rock_Enemy5" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 1848, -240 )
-
-[node name="Rock_Enemy6" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 2192, -48 )
-
-[node name="Rock_Enemy10" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 2256, -48 )
-
-[node name="Rock_Enemy11" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 4024, 336 )
-
-[node name="Rock_Enemy12" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 4808, 304 )
-is_magama = true
-
-[node name="Rock_Enemy13" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 4952, 304 )
-is_magama = true
-
-[node name="Rock_Enemy14" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 5240, 304 )
-is_magama = true
-
-[node name="Rock_Enemy7" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 2288, 272 )
-
-[node name="Rock_Enemy8" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 2352, 272 )
-
-[node name="Rock_Enemy9" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 2416, 272 )
-
-[node name="BatEnemy" parent="Enemies" instance=ExtResource( 19 )]
-position = Vector2( 360, 144 )
-
-[node name="BatEnemy2" parent="Enemies" instance=ExtResource( 19 )]
-position = Vector2( 1024, 112 )
-
-[node name="BatEnemy3" parent="Enemies" instance=ExtResource( 19 )]
-position = Vector2( 1280, -160 )
-
-[node name="BatEnemy4" parent="Enemies" instance=ExtResource( 19 )]
-position = Vector2( 2624, -128 )
-
-[node name="BatEnemy5" parent="Enemies" instance=ExtResource( 19 )]
-position = Vector2( 2752, 96 )
-
-[node name="BatEnemy6" parent="Enemies" instance=ExtResource( 19 )]
-position = Vector2( 3144, 104 )
-
-[node name="BatEnemy7" parent="Enemies" instance=ExtResource( 19 )]
-position = Vector2( 3328, 32 )
-
-[node name="BatEnemy8" parent="Enemies" instance=ExtResource( 19 )]
-position = Vector2( 3744, 128 )
+position = Vector2( 24, 272 )
 
 [node name="Breads" type="Node2D" parent="."]
 
@@ -245,17 +144,6 @@ position = Vector2( 4304, 304 )
 
 [node name="Bread20" parent="Breads" instance=ExtResource( 13 )]
 position = Vector2( 2320, -240 )
-
-[node name="Jumpers" type="Node2D" parent="."]
-
-[node name="Jumper" parent="Jumpers" instance=ExtResource( 9 )]
-position = Vector2( 2560, 272 )
-
-[node name="Jumper2" parent="Jumpers" instance=ExtResource( 9 )]
-position = Vector2( 2112, -48 )
-
-[node name="Jumper3" parent="Jumpers" instance=ExtResource( 9 )]
-position = Vector2( 3584, 144 )
 
 [node name="Bricks" type="Node2D" parent="."]
 
@@ -390,6 +278,122 @@ has_item = false
 [node name="Brick14" parent="Bricks" instance=ExtResource( 11 )]
 position = Vector2( 2320, -208 )
 has_item = false
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="StaticBody2D" parent="Enemies" instance=ExtResource( 14 )]
+position = Vector2( 4680, -32 )
+cannon_ball_speed = 150
+timeout = 2.0
+
+[node name="StaticBody2D2" parent="Enemies" instance=ExtResource( 14 )]
+position = Vector2( 4680, -56 )
+cannon_ball_speed = 150
+timeout = 2.0
+
+[node name="StaticBody2D3" parent="Enemies" instance=ExtResource( 14 )]
+position = Vector2( 4680, -80 )
+cannon_ball_speed = 150
+timeout = 2.0
+
+[node name="Fish_Enemy" parent="Enemies" instance=ExtResource( 15 )]
+position = Vector2( 368, 336 )
+is_green = true
+
+[node name="Fish_Enemy2" parent="Enemies" instance=ExtResource( 15 )]
+position = Vector2( 432, 336 )
+is_green = true
+
+[node name="Fish_Enemy3" parent="Enemies" instance=ExtResource( 15 )]
+position = Vector2( 656, 336 )
+is_green = true
+
+[node name="Fish_Enemy4" parent="Enemies" instance=ExtResource( 15 )]
+position = Vector2( 720, 336 )
+is_green = true
+
+[node name="Rock_Enemy" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 224, 272 )
+
+[node name="Rock_Enemy2" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 272, 272 )
+
+[node name="Rock_Enemy3" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 1216, -40 )
+
+[node name="Rock_Enemy4" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 1456, -240 )
+
+[node name="Rock_Enemy5" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 1848, -240 )
+
+[node name="Rock_Enemy6" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 2192, -48 )
+
+[node name="Rock_Enemy10" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 2256, -48 )
+
+[node name="Rock_Enemy11" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 4024, 336 )
+
+[node name="Rock_Enemy12" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 4808, 304 )
+is_magama = true
+
+[node name="Rock_Enemy13" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 4952, 304 )
+is_magama = true
+
+[node name="Rock_Enemy14" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 5240, 304 )
+is_magama = true
+
+[node name="Rock_Enemy7" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 2288, 272 )
+
+[node name="Rock_Enemy8" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 2352, 272 )
+
+[node name="Rock_Enemy9" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 2416, 272 )
+
+[node name="BatEnemy" parent="Enemies" instance=ExtResource( 19 )]
+position = Vector2( 360, 144 )
+
+[node name="BatEnemy2" parent="Enemies" instance=ExtResource( 19 )]
+position = Vector2( 1024, 112 )
+
+[node name="BatEnemy3" parent="Enemies" instance=ExtResource( 19 )]
+position = Vector2( 1280, -160 )
+
+[node name="BatEnemy4" parent="Enemies" instance=ExtResource( 19 )]
+position = Vector2( 2624, -128 )
+
+[node name="BatEnemy5" parent="Enemies" instance=ExtResource( 19 )]
+position = Vector2( 2752, 96 )
+
+[node name="BatEnemy6" parent="Enemies" instance=ExtResource( 19 )]
+position = Vector2( 3144, 104 )
+
+[node name="BatEnemy7" parent="Enemies" instance=ExtResource( 19 )]
+position = Vector2( 3328, 32 )
+
+[node name="BatEnemy8" parent="Enemies" instance=ExtResource( 19 )]
+position = Vector2( 3744, 128 )
+
+[node name="FireFlyHive" parent="Enemies" instance=ExtResource( 21 )]
+position = Vector2( 4720, 144 )
+
+[node name="Jumpers" type="Node2D" parent="."]
+
+[node name="Jumper" parent="Jumpers" instance=ExtResource( 9 )]
+position = Vector2( 2560, 272 )
+
+[node name="Jumper2" parent="Jumpers" instance=ExtResource( 9 )]
+position = Vector2( 2112, -48 )
+
+[node name="Jumper3" parent="Jumpers" instance=ExtResource( 9 )]
+position = Vector2( 3584, 144 )
 
 [node name="ToxicWater" type="Node2D" parent="."]
 

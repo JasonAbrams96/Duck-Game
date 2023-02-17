@@ -653,6 +653,9 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Tween2" type="Tween" parent="."]
+[connection signal="mouse_entered" from="ColorRect/PlayBtn" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="ColorRect/PlayBtn" to="." method="_on_PlayBtn_pressed"]
+[connection signal="mouse_entered" from="ColorRect/SettingsBtn" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="ColorRect/SettingsBtn" to="." method="_on_SettingsBtn_pressed"]
+[connection signal="mouse_entered" from="ColorRect/QuitBtn" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="ColorRect/QuitBtn" to="." method="_on_QuitBtn_pressed"]

@@ -28,75 +28,7 @@ script = ExtResource( 12 )
 position = Vector2( 5184, 128 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5360, 152 )
-
-[node name="Flowers" type="Node2D" parent="."]
-
-[node name="Flower Enemy" parent="Flowers" instance=ExtResource( 5 )]
-position = Vector2( 512, 368 )
-
-[node name="Flower Enemy4" parent="Flowers" instance=ExtResource( 5 )]
-position = Vector2( 1104, 232 )
-
-[node name="Flower Enemy5" parent="Flowers" instance=ExtResource( 5 )]
-position = Vector2( 1288, 360 )
-
-[node name="Flower Enemy2" parent="Flowers" instance=ExtResource( 5 )]
-position = Vector2( 408, 368 )
-
-[node name="Flower Enemy3" parent="Flowers" instance=ExtResource( 5 )]
-position = Vector2( 600, 352 )
-
-[node name="Cannon_Balls" type="Node2D" parent="."]
-
-[node name="Cannon" parent="Cannon_Balls" instance=ExtResource( 7 )]
-position = Vector2( 4344, 288 )
-
-[node name="Cannon2" parent="Cannon_Balls" instance=ExtResource( 7 )]
-position = Vector2( 4800, 256 )
-
-[node name="Cannon3" parent="Cannon_Balls" instance=ExtResource( 7 )]
-position = Vector2( 4864, 224 )
-
-[node name="Bees" type="Node2D" parent="."]
-
-[node name="Bee_Enemy" parent="Bees" instance=ExtResource( 4 )]
-position = Vector2( 1984, 248 )
-
-[node name="Bee_Enemy2" parent="Bees" instance=ExtResource( 4 )]
-position = Vector2( 2400, 184 )
-
-[node name="Bee_Enemy3" parent="Bees" instance=ExtResource( 4 )]
-position = Vector2( 2696, 240 )
-
-[node name="Fish" type="Node2D" parent="."]
-
-[node name="Fish_Enemy" parent="Fish" instance=ExtResource( 3 )]
-position = Vector2( 768, 432 )
-
-[node name="Fish_Enemy2" parent="Fish" instance=ExtResource( 3 )]
-position = Vector2( 824, 432 )
-diff = 170.0
-
-[node name="Fish_Enemy3" parent="Fish" instance=ExtResource( 3 )]
-position = Vector2( 1488, 440 )
-diff = 325.0
-
-[node name="Fish_Enemy4" parent="Fish" instance=ExtResource( 3 )]
-position = Vector2( 3896, 440 )
-diff = 175.0
-
-[node name="Fish_Enemy5" parent="Fish" instance=ExtResource( 3 )]
-position = Vector2( 3928, 440 )
-diff = 120.0
-
-[node name="Fish_Enemy6" parent="Fish" instance=ExtResource( 3 )]
-position = Vector2( 4080, 440 )
-diff = 175.0
-
-[node name="Fish_Enemy7" parent="Fish" instance=ExtResource( 3 )]
-position = Vector2( 4048, 440 )
-diff = 120.0
+position = Vector2( 32, 368 )
 
 [node name="Bricks" type="Node2D" parent="."]
 
@@ -295,6 +227,74 @@ collectible = ExtResource( 14 )
 [node name="SpecialBlock" parent="Bricks" instance=ExtResource( 19 )]
 position = Vector2( 1216, 320 )
 num = 1
+
+[node name="Flowers" type="Node2D" parent="."]
+
+[node name="Flower Enemy" parent="Flowers" instance=ExtResource( 5 )]
+position = Vector2( 512, 368 )
+
+[node name="Flower Enemy4" parent="Flowers" instance=ExtResource( 5 )]
+position = Vector2( 1104, 232 )
+
+[node name="Flower Enemy5" parent="Flowers" instance=ExtResource( 5 )]
+position = Vector2( 1288, 360 )
+
+[node name="Flower Enemy2" parent="Flowers" instance=ExtResource( 5 )]
+position = Vector2( 408, 368 )
+
+[node name="Flower Enemy3" parent="Flowers" instance=ExtResource( 5 )]
+position = Vector2( 600, 352 )
+
+[node name="Cannon_Balls" type="Node2D" parent="."]
+
+[node name="Cannon" parent="Cannon_Balls" instance=ExtResource( 7 )]
+position = Vector2( 4344, 288 )
+
+[node name="Cannon2" parent="Cannon_Balls" instance=ExtResource( 7 )]
+position = Vector2( 4800, 256 )
+
+[node name="Cannon3" parent="Cannon_Balls" instance=ExtResource( 7 )]
+position = Vector2( 4864, 224 )
+
+[node name="Bees" type="Node2D" parent="."]
+
+[node name="Bee_Enemy" parent="Bees" instance=ExtResource( 4 )]
+position = Vector2( 1984, 248 )
+
+[node name="Bee_Enemy2" parent="Bees" instance=ExtResource( 4 )]
+position = Vector2( 2400, 184 )
+
+[node name="Bee_Enemy3" parent="Bees" instance=ExtResource( 4 )]
+position = Vector2( 2696, 240 )
+
+[node name="Fish" type="Node2D" parent="."]
+
+[node name="Fish_Enemy" parent="Fish" instance=ExtResource( 3 )]
+position = Vector2( 768, 432 )
+
+[node name="Fish_Enemy2" parent="Fish" instance=ExtResource( 3 )]
+position = Vector2( 824, 432 )
+diff = 170.0
+
+[node name="Fish_Enemy3" parent="Fish" instance=ExtResource( 3 )]
+position = Vector2( 1488, 440 )
+diff = 325.0
+
+[node name="Fish_Enemy4" parent="Fish" instance=ExtResource( 3 )]
+position = Vector2( 3896, 440 )
+diff = 175.0
+
+[node name="Fish_Enemy5" parent="Fish" instance=ExtResource( 3 )]
+position = Vector2( 3928, 440 )
+diff = 120.0
+
+[node name="Fish_Enemy6" parent="Fish" instance=ExtResource( 3 )]
+position = Vector2( 4080, 440 )
+diff = 175.0
+
+[node name="Fish_Enemy7" parent="Fish" instance=ExtResource( 3 )]
+position = Vector2( 4048, 440 )
+diff = 120.0
 
 [node name="Platforms" type="Node2D" parent="."]
 

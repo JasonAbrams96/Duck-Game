@@ -71,32 +71,43 @@ __meta__ = {
 [node name="Label" type="Label" parent="Control/SettingsPanel"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -110.5
-margin_top = 24.0
-margin_right = 110.5
-margin_bottom = 91.0
+margin_left = -112.0
+margin_right = 109.0
+margin_bottom = 67.0
 text = "Settings"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="Control/SettingsPanel/Label"]
+[node name="MasterSlider" type="HSlider" parent="Control/SettingsPanel"]
+margin_left = 8.0
+margin_top = 80.0
+margin_right = 192.0
+margin_bottom = 96.0
+min_value = -60.0
+max_value = 6.0
+step = 0.1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Control/SettingsPanel/MasterSlider"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 32.0
-margin_top = 80.0
-margin_right = 184.0
-margin_bottom = 106.0
+margin_left = 100.0
+margin_top = -8.0
+margin_right = 252.0
+margin_bottom = 18.0
 custom_fonts/font = SubResource( 2 )
 text = "Master Volume"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MasterSlider" type="HSlider" parent="Control/SettingsPanel"]
-margin_left = 72.0
+[node name="BGSlider" type="HSlider" parent="Control/SettingsPanel"]
+margin_left = 8.0
 margin_top = 112.0
-margin_right = 256.0
+margin_right = 192.0
 margin_bottom = 128.0
 min_value = -60.0
 max_value = 6.0
@@ -105,11 +116,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label2" type="Label" parent="Control/SettingsPanel/BGSlider"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 100.0
+margin_top = -8.0
+margin_right = 361.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 2 )
+text = "Background Music Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFXSlider" type="HSlider" parent="Control/SettingsPanel"]
+margin_left = 8.0
+margin_top = 144.0
+margin_right = 192.0
+margin_bottom = 160.0
+min_value = -60.0
+max_value = 6.0
+step = 0.1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Control/SettingsPanel/SFXSlider"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 100.0
+margin_top = -8.0
+margin_right = 252.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 2 )
+text = "SFX Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ColorRect" type="ColorRect" parent="Control/SettingsPanel"]
-margin_left = 72.0
-margin_top = 152.0
-margin_right = 416.0
-margin_bottom = 296.0
+margin_left = 64.0
+margin_top = 176.0
+margin_right = 456.0
+margin_bottom = 312.0
 color = Color( 0.0901961, 0.713726, 0.627451, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -188,10 +237,10 @@ position = Vector2( 80, 88 )
 texture = ExtResource( 19 )
 
 [node name="TextureButton" type="TextureButton" parent="Control/SettingsPanel"]
-margin_left = 16.0
-margin_top = 272.0
-margin_right = 56.0
-margin_bottom = 312.0
+margin_left = 8.0
+margin_top = 288.0
+margin_right = 48.0
+margin_bottom = 328.0
 texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 17 )
 texture_hover = ExtResource( 18 )
@@ -266,8 +315,16 @@ stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="mouse_entered" from="Control/SettingsPanel/MasterSlider" to="." method="_on_slider_mouse_entered"]
 [connection signal="value_changed" from="Control/SettingsPanel/MasterSlider" to="." method="_on_MasterSlider_value_changed"]
+[connection signal="mouse_entered" from="Control/SettingsPanel/BGSlider" to="." method="_on_slider_mouse_entered"]
+[connection signal="value_changed" from="Control/SettingsPanel/BGSlider" to="." method="_on_BGSlider_value_changed"]
+[connection signal="mouse_entered" from="Control/SettingsPanel/SFXSlider" to="." method="_on_slider_mouse_entered"]
+[connection signal="value_changed" from="Control/SettingsPanel/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
 [connection signal="pressed" from="Control/SettingsPanel/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Control/PausePanel/ResumeBtn" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Control/PausePanel/ResumeBtn" to="." method="_on_ResumeBtn_pressed"]
+[connection signal="mouse_entered" from="Control/PausePanel/QuitBtn" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Control/PausePanel/QuitBtn" to="." method="_on_QuitBtn_pressed"]
+[connection signal="mouse_entered" from="Control/PausePanel/SettingsBtn" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Control/PausePanel/SettingsBtn" to="." method="_on_SettingsBtn_pressed"]

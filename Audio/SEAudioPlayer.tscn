@@ -3,4 +3,5 @@
 [ext_resource path="res://Audio/SEAudioPlayer.gd" type="Script" id=1]
 
 [node name="AudioPlayer" type="AudioStreamPlayer"]
+pause_mode = 2
 script = ExtResource( 1 )

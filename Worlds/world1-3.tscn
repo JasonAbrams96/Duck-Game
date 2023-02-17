@@ -30,7 +30,7 @@ script = ExtResource( 1 )
 position = Vector2( 5056, 128 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 48, 360 )
+position = Vector2( 24, 368 )
 
 [node name="Cannons" type="Node2D" parent="."]
 

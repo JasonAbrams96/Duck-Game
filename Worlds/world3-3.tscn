@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Events/Goal.tscn" type="PackedScene" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://Events/Jumper.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Platforms/Falling Platform.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Particles/Smoke.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Events/SpecialBlock.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Collectibles/Heart.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Collectibles/Hat.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Worlds/World.gd" type="Script" id=18]
@@ -26,7 +25,7 @@ script = ExtResource( 18 )
 position = Vector2( 5344, 64 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5864, 296 )
+position = Vector2( 24, 176 )
 
 [node name="Breads" type="Node2D" parent="."]
 
@@ -132,18 +131,6 @@ position = Vector2( 4656, 240 )
 
 [node name="Brick25" parent="Bricks" instance=ExtResource( 7 )]
 position = Vector2( 4624, 336 )
-
-[node name="SpecialBlock" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( 5872, -16 )
-num = 1
-
-[node name="SpecialBlock2" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( 6000, -16 )
-num = 2
-
-[node name="SpecialBlock3" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( 6128, -16 )
-num = 3
 
 [node name="Jumpers" type="Node2D" parent="."]
 

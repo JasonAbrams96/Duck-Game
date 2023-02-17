@@ -10,6 +10,11 @@ func _ready():
 func _process(delta):
 	if player_detected:
 		if Input.is_action_just_pressed("Quack") and Global.unlock_lock(num):
+			if Global.locks.size() == 1:
+				Global.create_sfx_audio("res://Assets/Audio/Last_Lock_unlocked.wav", get_tree().current_scene)
+			else:
+				Global.locks.erase(num)
+				Global.create_sfx_audio("res://Assets/Audio/Special_Lock_placementr.wav", get_tree().current_scene)
 			$Sprite.frame = 0
 			PlayerGlobal.add_score(score)
 			set_process(false)
