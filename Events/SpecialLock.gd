@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 var player_detected = false
+var score = 1000
 export var num = 0
 
 func _ready():
@@ -10,6 +11,7 @@ func _process(delta):
 	if player_detected:
 		if Input.is_action_just_pressed("Quack") and Global.unlock_lock(num):
 			$Sprite.frame = 0
+			PlayerGlobal.add_score(score)
 			set_process(false)
 
 

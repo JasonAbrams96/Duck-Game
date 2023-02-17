@@ -2,6 +2,7 @@ extends Node
 
 #loads
 var audio_player = preload("res://Audio/SEAudioPlayer.tscn")
+var music_player = null
 var explosion_particles = preload("res://Particles/Explosion.tscn")
 var cannon_ball = preload("res://Enemy/cannon_ball.tscn")
 var brick_hit = preload("res://Assets/brick_opened.png")
@@ -15,6 +16,11 @@ var falling_rock = preload("res://Enemy/FallingRock.tscn")
 var pause_menu = preload("res://Menu/Pause.tscn")
 #Globally Used by multiple things
 var GRAVITY = 20
+var bg_music = {
+	1: "res://Assets/Audio/8 Bit Surf.ogg",
+	2: "res://Assets/Audio/8 Bit Adventure.ogg",
+	3: "res://Assets/Audio/A Bit of Hope.ogg"
+}
 
 #Transition Screen
 var to_next_level = false
@@ -22,6 +28,7 @@ var world = 1
 var level = 1
 var current_level = "world" + String(world) + "-" + String(level)
 
+#Special locks
 var special_lock_1 = false
 var special_lock_2 = false
 var special_lock_3 = false
@@ -59,6 +66,14 @@ func get_current_level():
 	
 func get_current_level_string():
 	return "World " + String(world) + " - " + String(level)
+
+func create_bg_audio():
+	if music_player == null:
+		music_player = load("res://Audio/BackgroundAudio.tscn").instance()
+		get_tree().current_scene.add_child(music_player)
+		
+func change_bg_music(num):
+	music_player.play_sound(bg_music.get(num))
 
 func create_audio(audio, node_to_add_to: Node):
 	var sound_player = audio_player.instance()
@@ -102,6 +117,11 @@ func lock_special(num: int):
 		special_3 = true	
 		
 		
+func all_locks_unlocked():
+	if special_lock_1 == special_lock_2 and special_lock_2 == special_lock_3 and special_lock_3 == true:
+		return true
+	return false
+	
 func game_over():
 	#resets the items for GLOBAL
 	to_next_level = false

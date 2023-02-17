@@ -94,18 +94,18 @@ func jump(who_call):
 	#	Player jumping
 	if who_call == 0:
 		in_jump = true
-		motion.y -= jump_force
+		motion.y = -jump_force
 	
 	#	Player falling on enemy	
 	elif who_call == 1 and motion.y > 0:
 		motion.y = 0
-		motion.y -= jump_force * 1.25
+		motion.y = -jump_force * 1.25
 		
 	elif who_call == 2 and motion.y >= 0:
 		in_jump = true
 		in_jumper = true
 		motion.y = 0
-		motion.y -= jump_force * 1.5
+		motion.y = -jump_force * 1.5
 		
 	Global.create_sfx_audio("res://Assets/Audio/sfx_movement_jump5.wav", self)
 	

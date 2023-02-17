@@ -10,6 +10,7 @@ onready var countdown_timer = Timer.new()
 export var countdown_time = 200
 
 func _ready():
+	Global.current_level = name
 	$Goal.connect("goal_got", self, "player_got_in_goal")
 	timer_til_next_level.wait_time = 3.0
 	timer_til_next_level.connect("timeout", self, "_on_Timer_timeout")
@@ -17,6 +18,10 @@ func _ready():
 	
 	countdown_timer.wait_time = 1.0
 	countdown_timer.connect("timeout", self, "countdown_timer_timeout")
+	
+	#add the music player:
+	Global.create_bg_audio()
+	Global.change_bg_music(Global.world + 2)
 
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
@@ -26,7 +31,11 @@ func _process(delta):
 		get_tree().paused = true
 
 func _on_Timer_timeout():
-	get_tree().change_scene_to(GlobalTransition.transition)
+
+	if Global.all_locks_unlocked() and Global.current_level == "world3-3":
+		print("Special world unlocked TODO")
+	else:
+		get_tree().change_scene_to(GlobalTransition.transition)
 	
 func player_got_in_goal():
 	GlobalTransition.is_death_transition = false
