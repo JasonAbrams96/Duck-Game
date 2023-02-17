@@ -1,27 +1,74 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="Control" type="Control"]
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/Menus/Acme____.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = SubResource( 1 )
+
+[node name="Credits" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 34.0
-margin_top = 25.0
-margin_right = 494.0
-margin_bottom = 158.0
-text = "background Music: \"8 Bit Surf\" by David Renda on fesliyanstudios.com
+[node name="Panel" type="Panel" parent="."]
+margin_left = -72.6122
+margin_top = -52.4132
+margin_right = 683.388
+margin_bottom = 560.587
 
-Sound Effects: \"The Essential Retro Video Game Sound Effects Collection\" by Subspace Audio on opengameart.com
+[node name="Credits" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-Art: Jason Abrams
+[node name="BGLabel" type="Label" parent="Credits"]
+margin_left = 6.3317
+margin_top = 4.59692
+margin_right = 549.332
+margin_bottom = 175.597
+custom_fonts/font = SubResource( 2 )
+text = "Background Music:
+--8 Bit Surf and 8 Bit Adventure by David Renda on fesliyanstudios.com
+--A Bit of Hope by David Fesliyan on fesliyanstudios.com"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-Development: Jason Abrams
-
-Duck Noises: Alfred the Duck
+[node name="MeLabel" type="Label" parent="Credits"]
+margin_left = 6.62752
+margin_top = 323.265
+margin_right = 736.628
+margin_bottom = 494.265
+custom_fonts/font = SubResource( 2 )
+text = "Art & Development::
+-- Jason Abrams
+Duck Noises:
+--Alfred the Duck
 "
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFXLabel" type="Label" parent="Credits"]
+margin_left = 231.842
+margin_top = 166.342
+margin_right = 613.842
+margin_bottom = 333.342
+custom_fonts/font = SubResource( 2 )
+text = "Sound Effects:
+--\"The Essential Retro Video Game Sound Effects Collection\" by Subspace Audio on opengameart.com"
+valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
