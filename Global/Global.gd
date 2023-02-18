@@ -1,5 +1,9 @@
 extends Node
 
+#saves paths
+var scores_save = "user://files/scores.bin"
+var high_score = 0
+var high_score_name = "NIL "
 #loads
 var audio_player = preload("res://Audio/SEAudioPlayer.tscn")
 var explosion_particles = preload("res://Particles/Explosion.tscn")
@@ -26,7 +30,7 @@ var bg_music = {
 #Transition Screen
 var to_next_level = false
 var world = 1
-var level = 1
+var level = 3
 var current_level = "world" + String(world) + "-" + String(level)
 
 #Special locks
@@ -64,6 +68,15 @@ func get_next_level_string():
 		
 	return "world" +  String(temp_world) + " - " + String(temp_level)
 	
+func get_next_world_string():
+	var temp_level = level + 1
+	var temp_world = world
+	
+	if temp_level > 3:
+		temp_level = 1
+		temp_world += 1
+		
+	return  String(temp_world)
 func get_current_level():
 	return current_level
 	
@@ -140,3 +153,29 @@ func game_over():
 	PlayerGlobal.game_over()
 	
 	var transition = GlobalTransition.transition.instance()
+	
+	
+func update_score():
+	if PlayerGlobal.score > high_score:
+		high_score = PlayerGlobal.score
+		high_score_name = PlayerGlobal.my_name
+		save_scores()
+		
+func save_scores():
+	var f = File.new()
+	f.open(scores_save, File.WRITE)
+	var builder = high_score_name + "0%16d" % high_score
+	f.store_line(builder)
+	f.close()
+	
+func read_scores():
+	var f = File.new()
+	if f.file_exists(scores_save):
+		f.open(scores_save, File.READ)
+		var line = f.get_csv_line(" ")
+		high_score = int(line[1])
+		high_score_name = line[0] + " "
+		f.close()
+	else:
+		save_scores()
+	

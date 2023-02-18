@@ -39,7 +39,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Background Music:
 --8 Bit Surf and 8 Bit Adventure by David Renda on fesliyanstudios.com
 --A Bit of Hope by David Fesliyan on fesliyanstudios.com
---Music Pack 1 by Swiss Arcade Game Entertainment"
+--Music Pack 1 by Swiss Arcade Game Entertainment on itch.io"
 valign = 1
 autowrap = true
 __meta__ = {

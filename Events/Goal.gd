@@ -5,7 +5,8 @@ signal goal_got
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player") and not goal_already_got:
-		PlayerGlobal.score += 1000
+		PlayerGlobal.score += 500
+		PlayerGlobal.emit_signal("score_updated", PlayerGlobal.score)
 		goal_already_got = true
 		body.in_goal = true
 		var conf = load("res://Particles/Confetti.tscn").instance()

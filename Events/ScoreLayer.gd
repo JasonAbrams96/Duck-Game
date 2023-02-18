@@ -14,6 +14,8 @@ func _ready():
 	$ColorRect/LblScore/Breads/breadLbl.text = "x%02d" % PlayerGlobal.bread
 	
 func update_score(score_to_add):
+	if score_to_add >= 9999999999999999:
+		score_to_add = 9999999999999999
 	$ColorRect/LblScore.text = "%016d" % score_to_add
 
 func update_health(new_health):

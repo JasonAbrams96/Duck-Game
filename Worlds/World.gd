@@ -33,8 +33,15 @@ func _process(delta):
 func _on_Timer_timeout():
 
 	if Global.all_locks_unlocked() and Global.current_level == "world3-3":
-		print("Special world unlocked TODO")
+		Global.update_score()
+		Global.save_scores()
+	elif Global.current_level == "world3-3":
+		Global.update_score()
+		Global.save_scores()
+		print("Show a Thank you for playing screen")
 	else:
+		Global.update_score()
+		Global.save_scores()
 		get_tree().change_scene_to(GlobalTransition.transition)
 	
 func player_got_in_goal():

@@ -6,9 +6,11 @@ onready var _slide_show_tween = $Tween2
 var grow_tween_on = true
 var can_animate_slide_show = true
 var slide_show_timer = [3.0, 2.5]
-
+var popup_opened_once = false
 func _ready():
 	Global.change_bg_music(5)
+	Global.read_scores()
+	$ColorRect/HighScoreLbl.text += Global.high_score_name + " %016d" % Global.high_score
 func _process(delta):
 	
 	if grow_tween_on:
@@ -64,8 +66,13 @@ func _on_btn_mouse_entered():
 
 
 func _on_PlayBtn_pressed():
-	GlobalTransition.is_death_transition = true
-	get_tree().change_scene_to(GlobalTransition.transition)
+	if !popup_opened_once:
+		popup_opened_once = true
+		$EnterNameControl/PopupDialog.popup()
+	else:
+		Global.change_bg_music(4)
+		GlobalTransition.is_death_transition = true
+		get_tree().change_scene_to(GlobalTransition.transition)
 
 
 func _on_QuitBtn_pressed():
