@@ -15,12 +15,12 @@ func open():
 	if has_item:
 		$Sprite.visible = true
 		if collectible == null:
-			var b  = load("res://Collectibles/Bread.tscn").instance()
-			add_child(b)
+			var b  = Global.bread_scene.instance()
+			owner.call_deferred("add_child", b)
 			b.global_position = $Position2D.global_position
 		else:
 			var c = collectible.instance()
-			add_child(c)
+			owner.call_deferred("add_child", c)
 			c.global_position = $Position2D.global_position
 	$Area2D.queue_free()
 

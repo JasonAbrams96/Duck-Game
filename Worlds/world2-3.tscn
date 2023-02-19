@@ -580,6 +580,6 @@ tile_data = PoolIntArray( -1114113, 4, 0, -1179648, 4, 0, -1179647, 4, 0, -11796
 position = Vector2( 5312, 272 )
 texture = ExtResource( 12 )
 
-[node name="ScoreLayer" parent="." instance=ExtResource( 20 )]
-
 [node name="CaveBackground" parent="." instance=ExtResource( 1 )]
+
+[node name="ScoreLayer" parent="." instance=ExtResource( 20 )]

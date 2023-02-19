@@ -43,7 +43,6 @@ func _physics_process(delta):
 		if global_position.y > player_pos.y - 48 and !PlayerGlobal.player.in_jump or global_position.y > player_pos.y - 16 and PlayerGlobal.player.in_jump:
 			moving_down = false
 			moving_towards_player = true
-			motion
 	elif moving_towards_player:
 		motion.x = speed * 1.25 * dir
 		motion.y = 0

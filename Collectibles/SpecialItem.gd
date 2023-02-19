@@ -23,7 +23,6 @@ func _physics_process(delta):
 
 	if !is_on_floor():
 		velocity.y += Global.GRAVITY
-	
-	var snap = Vector2.DOWN * 32 if !in_jump else Vector2.ZERO
+		
 	velocity = move_and_slide(velocity, Vector2.UP)
 	

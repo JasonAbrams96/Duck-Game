@@ -9,4 +9,5 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D_body_exited(body):
 	if ToxicWaterSingleton.player_detected == true and body.motion.y < 0:
+		ToxicWaterSingleton.timer.stop()
 		ToxicWaterSingleton.player_detected = false

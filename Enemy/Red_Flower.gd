@@ -29,7 +29,6 @@ func _physics_process(delta):
 
 func _on_hurt_area_body_entered(body):
 	if body.is_in_group("player") and not dead:
-		print("red flower hurt")
 		body.hurt(1)
 		
 
@@ -40,13 +39,13 @@ func _on_JumpArea_body_entered(body):
 		set_collision_mask_bit(0, 0)
 		$HurtArea1.monitoring = false
 		$HurtArea2.monitoring = false
-		$JumpArea.monitoring = false
+		$JumpArea.set_deferred("monitoring", false)
 		$AnimatedSprite.play("dead")
 		set_physics_process(false)
 		PlayerGlobal.score += points
 		PlayerGlobal.emit_signal("score_updated", PlayerGlobal.score)
 		var expl = Global.explosion_particles.instance()
-		expl.my_texture = load("res://Assets/r_flower_enemy_dead-export.png")
+		expl.my_texture = load("res://Assets/r_flower_enemy_dead.png")
 		add_child(expl)
 		$DeathTimer.start()
 

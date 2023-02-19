@@ -2,10 +2,11 @@ extends Node
 
 
 var player_detected = false
-var timer = Timer.new()
+var timer
 var timer_added = false
 
 func _ready():
+	timer = Timer.new()
 	timer.wait_time = 0.8
 	timer.connect("timeout", self, "timer_timeout")
 	

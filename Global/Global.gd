@@ -1,11 +1,12 @@
 extends Node
 
 #saves paths
-var scores_save = "user://files/scores.bin"
+var scores_save = "user://scores.bin"
 var high_score = 0
 var high_score_name = "NIL "
 #loads
 var audio_player = preload("res://Audio/SEAudioPlayer.tscn")
+var bread_scene = preload("res://Collectibles/Bread.tscn")
 var explosion_particles = preload("res://Particles/Explosion.tscn")
 var cannon_ball = preload("res://Enemy/cannon_ball.tscn")
 var brick_hit = preload("res://Assets/brick_opened.png")
@@ -29,7 +30,7 @@ var bg_music = {
 
 #Transition Screen
 var to_next_level = false
-var world = 1
+var world = 3
 var level = 3
 var current_level = "world" + String(world) + "-" + String(level)
 
@@ -84,8 +85,13 @@ func get_current_level_string():
 	return "World " + String(world) + " - " + String(level)
 		
 func change_bg_music(num):
+	BackgroundAudio.bus = "Music"
 	BackgroundAudio.play_sound(bg_music.get(num))
-
+	
+func change_bg_to_nothing():
+	BackgroundAudio.bus = "Music"
+	BackgroundAudio.play_sound(false)
+	
 func create_audio(audio, node_to_add_to: Node):
 	var sound_player = audio_player.instance()
 	
@@ -152,8 +158,6 @@ func game_over():
 	GlobalTransition.game_over()
 	PlayerGlobal.game_over()
 	
-	var transition = GlobalTransition.transition.instance()
-	
 	
 func update_score():
 	if PlayerGlobal.score > high_score:
@@ -164,7 +168,7 @@ func update_score():
 func save_scores():
 	var f = File.new()
 	f.open(scores_save, File.WRITE)
-	var builder = high_score_name + "0%16d" % high_score
+	var builder = high_score_name + " " + String(high_score)
 	f.store_line(builder)
 	f.close()
 	

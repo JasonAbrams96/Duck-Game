@@ -9,7 +9,9 @@ extents = Vector2( 48.8868, 7.14095 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 47.8947, 4.06536 )
 
-[node name="Floating Platform" type="KinematicBody2D"]
+[node name="Floating Platform" type="KinematicBody2D" groups=[
+"platform",
+]]
 collision_layer = 2
 collision_mask = 9
 motion/sync_to_physics = true

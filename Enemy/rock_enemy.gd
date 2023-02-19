@@ -69,7 +69,7 @@ func _on_JumpArea_body_entered(body):
 		set_collision_mask_bit(0, 0)
 		$HurtArea.monitoring = false
 		$HurtArea2.monitoring = false
-		$JumpArea.monitoring = false
+		$JumpArea.call_deferred("monitoring", false)
 		$AnimatedSprite.play(modifier + "dead")
 		$MoveTimer.start()
 		

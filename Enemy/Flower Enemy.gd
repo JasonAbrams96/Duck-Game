@@ -35,7 +35,7 @@ func _on_HeadArea_body_entered(body):
 		set_collision_mask_bit(0, 0)
 		$HurtArea.monitoring = false
 		$HurtArea2.monitoring = false
-		$HeadArea.monitoring = false
+		$HeadArea.set_deferred("monitoring", false)
 		$AnimatedSprite.play("dead")
 		set_physics_process(false)
 		PlayerGlobal.score += points

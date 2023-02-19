@@ -19,8 +19,11 @@ func _ready():
 	countdown_timer.wait_time = 1.0
 	countdown_timer.connect("timeout", self, "countdown_timer_timeout")
 	
-	#add the music player:
-	Global.change_bg_music(Global.world)
+	if name == "world4-1":
+		Global.change_bg_to_nothing()
+	else:
+		#add the music player:
+		Global.change_bg_music(Global.world)
 
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
@@ -31,14 +34,22 @@ func _process(delta):
 		get_tree().paused = true
 
 func _on_Timer_timeout():
-
-	if Global.all_locks_unlocked() and Global.current_level == "world3-3":
+	print("world timeouts")
+	print(Global.current_level)
+	if Global.current_level == "world4-1":
+		PlayerGlobal.score += 10000
 		Global.update_score()
 		Global.save_scores()
+		get_tree().change_scene("res://Events/EndScreen.tscn")
+	elif Global.all_locks_unlocked() and Global.current_level == "world3-3":
+		Global.update_score()
+		Global.save_scores()
+		get_tree().change_scene_to(GlobalTransition.transition)
 	elif Global.current_level == "world3-3":
 		Global.update_score()
 		Global.save_scores()
-		print("Show a Thank you for playing screen")
+		GlobalTransition.completed_game = true
+		get_tree().change_scene("res://Events/EndScreen.tscn")
 	else:
 		Global.update_score()
 		Global.save_scores()

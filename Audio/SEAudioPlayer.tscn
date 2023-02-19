@@ -4,4 +4,5 @@
 
 [node name="AudioPlayer" type="AudioStreamPlayer"]
 pause_mode = 2
+bus = "Sound effects"
 script = ExtResource( 1 )

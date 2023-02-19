@@ -86,3 +86,8 @@ func _on_SettingsBtn_pressed():
 
 func _on_mouse_entered():
 	Global.create_sfx_audio("res://Assets/Audio/sfx_menu_move4.wav", get_tree().current_scene)
+
+
+func _on_CreditsBtn_pressed():
+	Global.menus.append("res://Menu/Main Menu.tscn")
+	get_tree().change_scene("res://Menu/Credits.tscn")

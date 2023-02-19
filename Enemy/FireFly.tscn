@@ -51,13 +51,13 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=10]
 
 [node name="Firefly" type="KinematicBody2D"]
+z_index = 1
 collision_layer = 128
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
 animation = "flying"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

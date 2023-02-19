@@ -31,6 +31,9 @@ func _ready():
 	hurt_shader.set_shader_param("flash_modifier", 0.0)
 	PlayerGlobal.player = self
 	
+	if player_global.has_hat == true:
+		hat_mod = "h_"
+	
 func _physics_process(delta):
 	
 	#Jump landing comfort zone
@@ -80,6 +83,7 @@ func get_input():
 	if Input.is_action_just_pressed("Quack"):
 		var q = (PlayerGlobal.rand.randi() % 4) + 1
 		Global.create_sfx_audio("res://Assets/Audio/quack"+ String(q) + ".wav", self)
+		
 	
 func flip_image():
 	if dir == -1:
@@ -120,6 +124,7 @@ func collect(name, amount, score):
 			PlayerGlobal.score += score
 			PlayerGlobal.emit_signal("score_updated", PlayerGlobal.score)
 			hat_mod = "h_"
+			player_global.has_hat = true
 			
 		elif name.to_upper() == "SPECIAL":
 			PlayerGlobal.score += score
@@ -142,15 +147,14 @@ func hurt(damage):
 		if damage == 5:
 			#OHKO
 			player_global.health -= 3
-			player_global.emit_signal("dead")
 			queue_free()
 		
 		if hat_mod != "":
 			hat_mod = ""
+			player_global.has_hat = false
 		else:
 			player_global.health -= 1
 			if player_global.health <= 0:
-				player_global.emit_signal("dead")
 				queue_free()
 		$HurtTimer.start()
 		is_invincible = true
@@ -187,7 +191,9 @@ func _on_HurtTimer_timeout():
 
 
 func _on_VisibilityNotifier2D_viewport_exited(viewport):
-	
+	print("Exited Viewport player")
 	if !in_goal and is_visible and !is_paused:
+		print("Exited Successful")
+		player_global.has_hat = false
 		GlobalTransition.is_death_transition = true
 		get_tree().change_scene_to(GlobalTransition.transition)

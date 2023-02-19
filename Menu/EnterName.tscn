@@ -34,6 +34,7 @@ __meta__ = {
 }
 
 [node name="PopupDialog" type="PopupDialog" parent="."]
+visible = true
 margin_left = 124.0
 margin_top = 149.0
 margin_right = 476.0
@@ -66,23 +67,22 @@ __meta__ = {
 
 [node name="Control" type="LineEdit" parent="PopupDialog"]
 margin_left = 28.0
-margin_top = 59.0
-margin_right = 170.0
-margin_bottom = 112.0
+margin_top = 51.0
+margin_right = 260.0
+margin_bottom = 104.0
 custom_fonts/font = SubResource( 3 )
 text = "NIL"
 max_length = 3
 caret_blink = true
-caret_position = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="PopupDialog"]
 margin_left = 204.0
-margin_top = 99.0
+margin_top = 107.0
 margin_right = 324.0
-margin_bottom = 155.0
+margin_bottom = 156.0
 custom_fonts/font = SubResource( 4 )
 text = "Close"
 [connection signal="about_to_show" from="PopupDialog" to="." method="_on_PopupDialog_about_to_show"]

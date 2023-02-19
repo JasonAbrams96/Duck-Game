@@ -11,7 +11,7 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		body.hurt(1)
 		queue_free()
-	elif body.is_in_group("platform"):
+	elif body.is_in_group("platform") or body.is_in_group("brick"):
 		#Chance to change into an enemy 1% chance
 		var rand_i = PlayerGlobal.get_i_rand_range_num(0, 99)
 		if rand_i < 99:

@@ -20,7 +20,7 @@ func _ready():
 	
 	else:
 		current_world_lbl.text = "CURRENT WORLD:  " + Global.get_next_level_string()
-		if GlobalTransition.current_world != Global.get_next_world_string():
+		if String(GlobalTransition.current_world) != Global.get_next_world_string():
 			GlobalTransition.current_world = Global.world + 1
 			Global.change_bg_music(4)
 			$Timer.wait_time = 4.1
@@ -38,4 +38,6 @@ func _on_Timer_timeout():
 		GlobalTransition.is_game_over = false
 		get_tree().change_scene_to(load("res://Menu/Main Menu.tscn"))
 	else:
+		if GlobalTransition.completed_game:
+			get_tree().change_scene("res://Events/EndScreen.tscn")
 		get_tree().change_scene_to(load("res://Worlds/" + Global.get_next_level() + ".tscn"))

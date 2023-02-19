@@ -3,6 +3,7 @@ extends Node
 
 var is_death_transition = false
 var is_game_over = false
+var completed_game = false
 var current_world = 1
 
 var transition = load("res://Events/Transition_Screen.tscn")
