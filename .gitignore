@@ -12,3 +12,5 @@
 .mono/metadata/
 
 *.ogg
+
+*.cfg

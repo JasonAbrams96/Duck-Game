@@ -27,10 +27,9 @@ func _physics_process(delta):
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		body.on_moving_platform = true
-		print("moving platform entered")
+
 
 
 func _on_Area2D_body_exited(body):
 	if body.is_in_group("player"):
 		body.on_moving_platform = false
-		print("moving platform exited")

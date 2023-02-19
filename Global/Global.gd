@@ -30,8 +30,8 @@ var bg_music = {
 
 #Transition Screen
 var to_next_level = false
-var world = 3
-var level = 3
+var world = 1
+var level = 1
 var current_level = "world" + String(world) + "-" + String(level)
 
 #Special locks

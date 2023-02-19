@@ -11,7 +11,6 @@ func _ready():
 	var e = connect("finished", self, "replay")
 	
 func play_sound(sound_file):
-	print("called, " + String(sound_file))
 	if typeof(sound_file) != TYPE_STRING and (sound_file == null or sound_file == false):
 		set_stream(null)
 		stop()

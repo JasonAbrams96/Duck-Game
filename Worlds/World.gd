@@ -7,7 +7,7 @@ onready var player = $Player
 onready var timer_til_next_level = Timer.new()
 
 onready var countdown_timer = Timer.new()
-export var countdown_time = 200
+export var countdown_time = 20000
 
 func _ready():
 	Global.current_level = name

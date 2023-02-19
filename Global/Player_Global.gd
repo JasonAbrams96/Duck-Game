@@ -63,7 +63,7 @@ func game_over():
 	health = 3
 	bread = 0
 	player = null
-	num_of_lives = 3
+	num_of_lives = 4
 	specials_collected = 0
 	my_name = "NIL"
 	

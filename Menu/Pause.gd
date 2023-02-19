@@ -8,6 +8,7 @@ func _ready():
 	
 func _on_ResumeBtn_pressed():
 	get_tree().paused = false
+	PlayerGlobal.player.is_paused = false
 	Global.create_sfx_audio("res://Assets/Audio/sfx_sounds_pause3_out.wav", get_tree().current_scene)
 	queue_free()
 

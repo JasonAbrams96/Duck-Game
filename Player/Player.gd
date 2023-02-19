@@ -166,6 +166,7 @@ func change_camera_location(gl: Vector2):
 	camera.global_position = gl
 	
 func toggle_vb_notifier():
+	print("Toggling the vb notifier")
 	is_visible = !is_visible
 	
 func _on_Area2D_body_shape_entered(body_id, body, body_shape, area_shape):
